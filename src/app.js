@@ -1,5 +1,5 @@
 import { HomePage } from './pages/HomePage.js';
-import { MusicPage } from './pages/MusicPage.js';
+import { MusicPage } from './pages/MusicPage.js?v=shuffle-2';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
 
