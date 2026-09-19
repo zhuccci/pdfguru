@@ -1,0 +1,21 @@
+/* Figma 43:154. Desktop source dimensions; responsive reflow below 800px. */
+body[data-page="music"]{background:var(--color-bg-generator-page)}
+.music-page{gap:32px;padding:0 24px}
+.music-header{padding:24px 32px}
+.generation-section{display:flex;flex-direction:column;align-items:center;gap:40px;padding:32px 0}
+.generation-intro{display:flex;flex-direction:column;gap:16px;text-align:center;width:var(--module-width)}
+.generation-intro p{font-size:20px;line-height:32px}
+.music-generator{display:flex;flex-direction:column;gap:16px;width:min(688px,calc(100% - 32px));padding:16px;border:.5px solid var(--color-border-generator);border-radius:24px;background:var(--color-bg-page);box-shadow:var(--shadow-generator)}
+.generation-modes{display:flex;align-self:flex-start;border:.5px solid var(--color-border-generator);border-radius:12px;padding:4px}
+.button--mode{min-height:38px;line-height:22px;padding:8px 16px;border-radius:8px}
+.button--mode[aria-pressed="true"]{background:var(--color-bg-mode-selected);color:var(--color-text-music-action)}
+.music-generator textarea{display:block;width:100%;height:150px;min-height:150px;resize:vertical;background:var(--color-bg-generator-input);border:.5px solid var(--color-border-generator);border-radius:16px;padding:8px;color:var(--color-text-primary);font:inherit;line-height:22px}
+.music-generator textarea::placeholder{color:var(--color-text-muted);opacity:1}
+.music-generator textarea:focus-visible{outline:2px solid var(--color-text-music-action);outline-offset:2px}
+.generation-actions{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.button--shuffle{padding:4px;min-height:32px;border-radius:8px;gap:4px;color:var(--color-text-music-action)}
+.button--shuffle:hover{background:var(--color-bg-mode-selected)}
+.button--generate{background:var(--color-button-generate);color:var(--color-text-inverse);height:52px;min-height:52px;padding:14px 24px;border-radius:12px}
+.button--generate:hover{background:var(--color-button-generate-hover)}
+@media(max-width:800px){.music-page{padding:0 16px;gap:24px}.music-header{padding:24px 16px}.generation-section{padding:24px 0}.generation-intro p{font-size:18px;line-height:28px}}
+@media(max-width:420px){.music-generator{padding:12px}.generation-actions{gap:8px}.button--generate{padding:12px;font-size:14px}.button--shuffle{font-size:14px;gap:2px}}

@@ -1,0 +1,14 @@
+# Figma assets
+
+Original artwork exported from FORMA (`7PuiN52bUs4UnIIlfcx6RD`). SVG content and intrinsic dimensions are preserved. UI icons occupy 24 × 24px slots via `src/components/Icon.js`.
+
+| Repository asset | Figma source |
+|---|---|
+| icons/tools-grid.png | Component 51:780; exact 24px PNG export (no SVG asset returned by Figma) |
+| icons/shuffle.svg | Frame 43:154 export c77dc.svg; shuffle artwork |
+| icons/sparkles.svg | Frame 43:154 export 15aa4.svg; Generate music artwork |
+| icons/chevron-down.svg | Frame 43:154 export 34bb0.svg; Tools dropdown |
+| icons/chevron-down-light.svg | Frame 43:154 export e3dd5.svg; language dropdown |
+| brand/logo-light.svg | Frame 43:154 export dfb60.svg; footer logo |
+
+Earlier header, music illustration and tool-card exports remain at the assets root; their mappings are in `docs/design-system.md`. No runtime dependency on temporary Figma URLs is required.

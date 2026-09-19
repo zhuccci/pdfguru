@@ -16,6 +16,12 @@ Nunito Sans is the product family. Geist and Inter belong to research. The palet
 | ToolIcon | 25:714 | assets/*.svg | Six editable source icons; five used by this page. 64px grid. |
 | ToolCard | 25:717 | src/components/ToolCard.js | Default/Hover, editable Label, swappable Icon. 195 × 130px. |
 | Upload area | 17:42 | src/components/UploadZone.js | idle → dragging → selected/error → reset. Local-only validation. |
+| Header | 43:160 | src/components/Header.js | Shared on both pages; Tools menu open/closed, Escape and outside-click dismissal. |
+| Footer | 43:234 | src/components/Footer.js | Shared white logo, five link groups and copyright. |
+| Features | 43:502 | src/components/Features.js | Shared heading and ten ToolCard instances. |
+| Generation block | 51:712 | src/components/MusicGenerator.js | Prompt input, selected mode, shuffle and validation. Generation callback is a prototype boundary. |
+| Generate button | 43:463 / 43:460 | Button with generate variant | Purple default/hover, white sparkle icon, 52px height and 12px radius. |
+| UI icons | 51:780 and frame 43:154 exports | src/components/Icon.js | Named registry, dedicated assets/icons directory, 24px decorative slot. |
 
 The header Log in control is 44px high in the source layout; the reusable Button set is 52px high. A documented `header-login` modifier preserves this source distinction.
 
@@ -32,7 +38,15 @@ The header Log in control is 44px high in the source layout; the reusable Button
 | 50bee.svg | Excel tool icon |
 | 42bac.svg | HTML tool icon |
 
-The footer logo slot is empty in the edited Figma frame; its spacing is preserved. Existing unusual icon assignments (for example Excel to PDF) are retained from the source rather than silently corrected.
+The footer was updated from frame 43:234 to include the white logo and is now the same component on both pages. Existing unusual icon assignments (for example Excel to PDF) are retained from the source rather than silently corrected.
+
+The original `design-tokens.json` records the first kit export. Music-specific colors and the updated shared card radius are recorded in `tokens.css`; these additions are read from frame 43:154 and are not a claim that new variables were published to Figma. The old home primary-button color is preserved. The new generator button uses a separate purple variant. Header Log in retains its explicit 14px radius from the new frame.
+
+## Page boundaries
+
+`index.html` and `music.html` share one application entry point, CSS foundations, header, footer and features. Native links support browser Back, opening in a new tab and direct GitHub Pages refresh. The home music promotion remains aligned to the feature modules (1040px maximum, 16px inset on narrower screens).
+
+The music component emits `{ prompt, mode }` through `onGenerate`. The app currently opens a preview dialog; it does not call an AI service or pretend to generate audio. Simple/Custom is selected UI state only until that workflow is designed. Shuffle rotates through local example prompts and never repeats immediately. Prompt state lasts for the current page visit and is not stored remotely.
 
 ## Accessibility and responsive behavior
 

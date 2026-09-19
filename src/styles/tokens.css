@@ -78,3 +78,16 @@
   --color-border-muted: var(--palette-neutral-600);
   --font-family: 'Nunito Sans', Arial, sans-serif;
 }
+
+/* Frame 43:154 additions; original kit snapshot remains in design-tokens.json. */
+:root{
+  --radius-card:16px;
+  --color-bg-generator-page:#f7f5fb;
+  --color-bg-generator-input:#fbfafe;
+  --color-bg-mode-selected:#f5f0fe;
+  --color-text-music-action:#5f30e2;
+  --color-button-generate:#7422e0;
+  --color-button-generate-hover:#9747ff;
+  --color-border-generator:#e8e8e8;
+  --shadow-generator:0 0 8px rgb(232 220 255 / .5);
+}
