@@ -33,7 +33,6 @@ export function MusicGenerator({ onGenerate }) {
     suggestionIndex = (suggestionIndex + 1 + Math.floor(Math.random() * (suggestions.length - 1))) % suggestions.length;
     prompt.value = suggestions[suggestionIndex];
     prompt.setCustomValidity('');
-    prompt.focus();
   } });
   shuffle.prepend(Icon('shuffle'));
   const generate = Button({ label: 'Generate music', variant: 'generate' });
