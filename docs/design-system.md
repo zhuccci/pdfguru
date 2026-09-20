@@ -46,7 +46,7 @@ The original `design-tokens.json` records the first kit export. Music-specific c
 
 `index.html` and `music.html` share one application entry point, CSS foundations, header, footer and features. Native links support browser Back, opening in a new tab and direct GitHub Pages refresh. The home music promotion remains aligned to the feature modules (1040px maximum, 16px inset on narrower screens).
 
-The music component emits `{ prompt, mode }` through `onGenerate`. The app currently opens a preview dialog; it does not call an AI service or pretend to generate audio. Simple/Custom is selected UI state only until that workflow is designed. Shuffle rotates through local example prompts and never repeats immediately. Prompt state lasts for the current page visit and is not stored remotely.
+The music component emits `{ prompt, mode }` through `onGenerate`. The app currently opens a preview dialog; it does not call an AI service or pretend to generate audio. CustomMusicFields.js implements frame 57:942 with title, lyrics, voice and style controls. Both sections start expanded, matching the source. Custom entries persist across mode switches; only Custom submissions include them. Lyrics Generate opens a prototype notice. Shuffle rotates through local example prompts and never repeats immediately. Prompt state lasts for the current page visit and is not stored remotely.
 
 ## Accessibility and responsive behavior
 
@@ -57,3 +57,5 @@ Source contrast: white on primary default is 5.11:1. White on primary hover is 3
 ## Mapping
 
 Figma IDs and code paths above form an explicit handoff mapping. Native Figma Code Connect has not been published; this dependency-free static project has no Code Connect integration.
+
+Custom update: the generator is 647px wide, fields use 8px corners, section padding and gaps are 16px, labels have a 4px field gap, and lyrics input is 102px tall. The prompt remains 150px tall. Source: 57:942. Style chips wrap to the available content width rather than reproducing the Figma fixed-width overflow.

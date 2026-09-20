@@ -4,6 +4,7 @@ export const iconAssets = Object.freeze({
   shuffle: 'shuffle.svg',
   sparkles: 'sparkles.svg',
   chevronDown: 'chevron-down.svg',
+  chevronRight: 'chevron-right.svg',
   chevronDownLight: 'chevron-down-light.svg',
 });
 

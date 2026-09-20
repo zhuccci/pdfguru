@@ -12,3 +12,5 @@ Original artwork exported from FORMA (`7PuiN52bUs4UnIIlfcx6RD`). SVG content and
 | brand/logo-light.svg | Frame 43:154 export dfb60.svg; footer logo |
 
 Earlier header, music illustration and tool-card exports remain at the assets root; their mappings are in `docs/design-system.md`. No runtime dependency on temporary Figma URLs is required.
+
+Custom component 57:942 adds icons/chevron-right.svg (Figma export a7306.svg), preserved at 24 × 24px.

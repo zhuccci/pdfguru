@@ -1,6 +1,6 @@
 import { Header } from '../components/Header.js';
 import { Features } from '../components/Features.js';
-import { MusicGenerator } from '../components/MusicGenerator.js?v=shuffle-2';
+import { MusicGenerator } from '../components/MusicGenerator.js?v=custom-1';
 
 export function MusicPage(actions) {
   const main = document.createElement('main');
