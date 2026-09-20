@@ -5,9 +5,9 @@ body[data-page="music"]{background:var(--color-bg-generator-page)}
 .generation-section{display:flex;flex-direction:column;align-items:center;gap:40px;padding:32px 0}
 .generation-intro{display:flex;flex-direction:column;gap:16px;text-align:center;width:var(--module-width)}
 .generation-intro p{font-size:20px;line-height:32px}
-.music-generator{display:flex;flex-direction:column;gap:16px;width:min(647px,calc(100% - 32px));padding:16px;border:.5px solid var(--color-border-generator);border-radius:24px;background:var(--color-bg-page);box-shadow:var(--shadow-generator)}
-.generation-modes{display:flex;align-self:flex-start;border:.5px solid var(--color-border-generator);border-radius:12px;padding:4px}
-.button--mode{width:83px;min-height:38px;line-height:22px;padding:8px 16px;border:.5px solid transparent;border-radius:8px}
+.music-generator{display:flex;flex-direction:column;gap:0;width:min(647px,calc(100% - 32px));padding:16px;border:.5px solid var(--color-border-generator);border-radius:24px;background:var(--color-bg-page);box-shadow:var(--shadow-generator)}
+.generation-modes{display:flex;align-self:flex-start;margin-bottom:16px;border:.5px solid var(--color-border-generator);border-radius:12px;padding:4px}
+.button--mode{width:83px;min-height:38px;line-height:22px;padding:8px 16px;border:.5px solid transparent;border-radius:8px;transition:background-color 160ms ease,border-color 160ms ease,color 160ms ease}
 .button--mode:nth-child(2){width:90px}
 .button--mode[aria-pressed="true"]{background:var(--color-bg-mode-selected);border-color:var(--color-text-music-action);color:var(--color-text-music-action)}
 .music-generator textarea,.music-generator input{display:block;width:100%;background:var(--color-bg-generator-input);border:.5px solid var(--color-border-generator);border-radius:8px;padding:8px;color:var(--color-text-primary);font:400 16px/22px var(--font-family)}
@@ -15,8 +15,13 @@ body[data-page="music"]{background:var(--color-bg-generator-page)}
 .music-generator textarea::placeholder,.music-generator input::placeholder{color:var(--color-text-muted);opacity:1}
 .music-generator textarea:focus-visible,.music-generator input:focus-visible{outline:2px solid var(--color-text-music-action);outline-offset:2px}
 .music-field{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:700;line-height:19px;width:100%;min-width:0}
+.prompt-field{margin-bottom:16px}
 .prompt-heading{min-height:32px}
-.custom-music-fields,.options-body{display:flex;flex-direction:column;gap:16px;min-width:0}
+.custom-music-fields{display:grid;grid-template-rows:0fr;min-width:0;opacity:0;pointer-events:none;transition:grid-template-rows 240ms cubic-bezier(.23,1,.32,1),opacity 160ms ease}
+.custom-music-fields-inner{display:flex;min-height:0;min-width:0;overflow:hidden;flex-direction:column;gap:16px;padding-bottom:16px;transform:translateY(-8px);transition:transform 240ms cubic-bezier(.23,1,.32,1)}
+.music-generator.is-custom .custom-music-fields{grid-template-rows:1fr;opacity:1;pointer-events:auto}
+.music-generator.is-custom .custom-music-fields-inner{transform:translateY(0)}
+.options-body{display:flex;flex-direction:column;gap:16px;min-width:0}
 .music-options{border:.5px solid var(--color-border-music-section);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:16px;min-width:0}
 .button--disclosure{display:flex;justify-content:flex-start;gap:8px;min-height:32px;padding:4px 0;width:100%;border-radius:4px}
 .lyrics-options .button--disclosure[aria-expanded="false"] .icon{transform:rotate(-90deg)}
@@ -47,5 +52,6 @@ body[data-page="music"]{background:var(--color-bg-generator-page)}
 .button--generate:hover{background:var(--color-button-generate-hover)}
 @media(max-width:800px){.music-page{padding:0 16px;gap:24px}.music-header{padding:24px 16px}.generation-section{padding:24px 0}.generation-intro p{font-size:18px;line-height:28px}}
 @media(max-width:560px){.detail-selectors{flex-direction:column}.detail-selector{width:100%;min-height:58px}.music-generator{padding:12px}.generation-actions{gap:8px}.button--generate{padding:12px;font-size:14px}.button--shuffle{font-size:14px;gap:2px}}
+@media(prefers-reduced-motion:reduce){.custom-music-fields{transition:grid-template-rows 1ms linear,opacity 120ms ease-out}.custom-music-fields-inner{transform:none;transition:none}}
 
 .options-body{gap:24px}

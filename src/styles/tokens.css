@@ -92,5 +92,5 @@
   --shadow-generator:0 0 8px rgb(232 220 255 / .5);
 }
 
-/* Custom section outlines from Figma 57:942. */
-:root{--color-border-music-section:#b1b1b1}
+/* Custom section outlines: distinct from the field borders without feeling heavy. */
+:root{--color-border-music-section:#d8d8d8}
