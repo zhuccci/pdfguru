@@ -16,3 +16,5 @@ Earlier header, music illustration and tool-card exports remain at the assets ro
 Custom component 57:942 adds icons/chevron-right.svg (Figma export a7306.svg), preserved at 24 × 24px.
 
 icons/list-sparkle.svg is the exact 24px Figma export 8b473.svg from component 57:942, used for Lyrics Generate. Both section headers now use chevron-down.svg.
+
+icons/audio.svg is the exact 24px Figma export a5965.svg from component 57:942, used by the Custom “Create my song” action.

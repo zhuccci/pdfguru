@@ -60,4 +60,4 @@ Figma IDs and code paths above form an explicit handoff mapping. Native Figma Co
 
 Custom update: the generator is 647px wide, fields use 8px corners, section padding and gaps are 16px, labels have an 8px field gap, and lyrics input is 102px tall. The prompt remains 150px tall. Source: 57:942. Style chips wrap to the available content width rather than reproducing the Figma fixed-width overflow.
 
-Latest Custom revision: section borders are #b1b1b1; Shuffle sits beside the prompt label without focusing the input; Lyrics Generate uses the original list-sparkle icon. Lyrics fields have 24px gaps. Styles toggle independently, allow all nine selections and are emitted as a styles array. Voice remains a single selection.
+Latest Custom revision: section borders are #b1b1b1; Shuffle sits beside the prompt label without focusing the input; Lyrics Generate uses the original list-sparkle icon. Voice & Lyrics includes an Add vocals switch. Styles toggle independently, allow all nine selections and are emitted as a styles array. Format and Duration are single-choice selectors. The Custom action uses the audio icon and “Create my song” label.

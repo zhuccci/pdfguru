@@ -1,6 +1,6 @@
 import { Button } from './Button.js';
-import { Icon } from './Icon.js?v=custom-2';
-import { CustomMusicFields } from './CustomMusicFields.js?v=custom-2';
+import { Icon } from './Icon.js?v=custom-3';
+import { CustomMusicFields } from './CustomMusicFields.js?v=custom-3';
 
 const suggestions = [
   'A dreamy indie pop song about a late-night drive, with warm vocals and a gentle synth beat.',
@@ -29,6 +29,8 @@ export function MusicGenerator({ onGenerate, onLyricsGenerate }) {
       mode = label;
       custom.element.hidden = mode !== 'Custom';
       form.classList.toggle('is-custom', mode === 'Custom');
+      generate.lastChild.textContent = mode === 'Custom' ? 'Create my song' : 'Generate music';
+      generate.firstChild.replaceWith(Icon(mode === 'Custom' ? 'audio' : 'sparkles'));
       for (const item of modes.children) item.setAttribute('aria-pressed', String(item === button));
     } });
     button.setAttribute('aria-pressed', String(label === mode));

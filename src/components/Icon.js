@@ -3,6 +3,7 @@ export const iconAssets = Object.freeze({
   tools: 'tools-grid.png',
   shuffle: 'shuffle.svg',
   listSparkle: 'list-sparkle.svg',
+  audio: 'audio.svg',
   sparkles: 'sparkles.svg',
   chevronDown: 'chevron-down.svg',
   chevronRight: 'chevron-right.svg',
