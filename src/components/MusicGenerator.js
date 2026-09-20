@@ -1,6 +1,6 @@
 import { Button } from './Button.js';
-import { Icon } from './Icon.js?v=custom-3';
-import { CustomMusicFields } from './CustomMusicFields.js?v=custom-3';
+import { Icon } from './Icon.js?v=motion-2';
+import { CustomMusicFields } from './CustomMusicFields.js?v=motion-2';
 
 const suggestions = [
   'A dreamy indie pop song about a late-night drive, with warm vocals and a gentle synth beat.',
@@ -24,15 +24,21 @@ export function MusicGenerator({ onGenerate, onLyricsGenerate }) {
   form.querySelector('.generation-actions').before(custom.element);
   let mode = 'Simple';
   let suggestionIndex = -1;
+
+  const switchMode = nextMode => {
+    if (nextMode === mode) return;
+    const showCustom = nextMode === 'Custom';
+    mode = nextMode;
+    custom.element.inert = !showCustom;
+    custom.element.setAttribute('aria-hidden', String(!showCustom));
+    form.classList.toggle('is-custom', showCustom);
+    generate.lastChild.textContent = showCustom ? 'Create my song' : 'Generate music';
+    generate.firstChild.replaceWith(Icon(showCustom ? 'audio' : 'sparkles'));
+    for (const item of modes.children) item.setAttribute('aria-pressed', String(item.textContent.trim() === mode));
+  };
+
   for (const label of ['Simple', 'Custom']) {
-    const button = Button({ label, variant: 'mode', onClick: () => {
-      mode = label;
-      custom.element.hidden = mode !== 'Custom';
-      form.classList.toggle('is-custom', mode === 'Custom');
-      generate.lastChild.textContent = mode === 'Custom' ? 'Create my song' : 'Generate music';
-      generate.firstChild.replaceWith(Icon(mode === 'Custom' ? 'audio' : 'sparkles'));
-      for (const item of modes.children) item.setAttribute('aria-pressed', String(item === button));
-    } });
+    const button = Button({ label, variant: 'mode', onClick: () => switchMode(label) });
     button.setAttribute('aria-pressed', String(label === mode));
     modes.append(button);
   }

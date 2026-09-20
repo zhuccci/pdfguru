@@ -1,5 +1,5 @@
 import { Button } from './Button.js';
-import { Icon } from './Icon.js?v=custom-3';
+import { Icon } from './Icon.js?v=motion-2';
 
 const styleNames = ['Pop', 'Hip-hop', 'Lo-fi', 'Cinematic', 'Rock', 'Jazz', 'Grime', 'Ambient', 'Synthwave'];
 const formatOptions = [['Track', 'Structured song'], ['Loop', 'Seamless repeat'], ['Jingle', 'Short catchy hook']];
@@ -42,8 +42,9 @@ function Selectors({ options, name, initial, onChange }) {
 export function CustomMusicFields({ onLyricsGenerate }) {
   const element = document.createElement('div');
   element.className = 'custom-music-fields';
-  element.hidden = true;
-  element.innerHTML = `<section class="music-options lyrics-options"><div class="options-heading"></div>
+  element.inert = true;
+  element.setAttribute('aria-hidden', 'true');
+  element.innerHTML = `<div class="custom-music-fields-inner"><section class="music-options lyrics-options"><div class="options-heading"></div>
     <div class="options-body" id="lyrics-options-body">
       <div class="vocals-toggle-row"><button class="vocals-toggle" type="button" role="switch" aria-checked="true" aria-controls="vocals-dependent" aria-labelledby="vocals-toggle-label"><span aria-hidden="true"></span></button><span id="vocals-toggle-label">Add vocals</span></div>
       <div class="vocals-dependent" id="vocals-dependent">
@@ -56,7 +57,7 @@ export function CustomMusicFields({ onLyricsGenerate }) {
       <div class="style-chips" role="group" aria-label="Music styles"></div>
       <div class="music-field"><span>Format</span><div class="format-slot"></div></div>
     </div></section>
-    <section class="music-options duration-options"><div class="options-heading"></div><div class="options-body" id="duration-options-body"><div class="duration-slot"></div></div></section>`;
+    <section class="music-options duration-options"><div class="options-heading"></div><div class="options-body" id="duration-options-body"><div class="duration-slot"></div></div></section></div>`;
 
   element.querySelector('.lyrics-options .options-heading').append(Disclosure({ label: 'Voice & Lyrics', bodyId: 'lyrics-options-body', root: element }));
   element.querySelector('.style-options .options-heading').append(Disclosure({ label: 'Style & format', bodyId: 'style-options-body', root: element }));
