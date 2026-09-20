@@ -1,5 +1,5 @@
 import { Button } from './Button.js';
-import { Icon } from './Icon.js?v=custom-1';
+import { Icon } from './Icon.js?v=custom-2';
 
 /** Figma 57:942. Keeps field state when sections or Custom mode are hidden. */
 export function CustomMusicFields({ onLyricsGenerate }) {
@@ -16,7 +16,7 @@ export function CustomMusicFields({ onLyricsGenerate }) {
     <section class="music-options style-options"><div class="options-heading"></div><div class="style-chips" id="style-options-body" role="group" aria-label="Music style"></div></section>`;
   for (const [selector, label, icon, bodyId] of [
     ['.lyrics-options', 'Lyrics', 'chevronDown', 'lyrics-options-body'],
-    ['.style-options', 'Choose a style', 'chevronRight', 'style-options-body'],
+    ['.style-options', 'Choose a style', 'chevronDown', 'style-options-body'],
   ]) {
     const section = element.querySelector(selector);
     const heading = Button({ label, variant: 'disclosure', onClick: () => {
@@ -30,14 +30,14 @@ export function CustomMusicFields({ onLyricsGenerate }) {
     section.querySelector('.options-heading').append(heading);
   }
   const lyricsGenerate = Button({ label: 'Generate', variant: 'shuffle', onClick: onLyricsGenerate });
-  lyricsGenerate.prepend(Icon('shuffle'));
+  lyricsGenerate.prepend(Icon('listSparkle'));
   element.querySelector('.lyrics-generate-slot').append(lyricsGenerate);
   let voice = 'Male';
-  let style = '';
+  const styles = new Set();
   function choices(container, labels, variant, initial, onSelect) {
     for (const label of labels) {
       const button = Button({ label, variant, onClick: () => {
-        const selected = variant === 'chip' && button.getAttribute('aria-pressed') === 'true' ? '' : label;
+        const selected = label;
         for (const child of container.children) child.setAttribute('aria-pressed', String(child.textContent === selected));
         onSelect(selected);
       } });
@@ -46,10 +46,18 @@ export function CustomMusicFields({ onLyricsGenerate }) {
     }
   }
   choices(element.querySelector('.voice-options'), ['Male', 'Female'], 'voice', voice, value => { voice = value; });
-  choices(element.querySelector('.style-chips'), ['Pop', 'Hip-hop', 'Lo-fi', 'Cinematic', 'Rock', 'Jazz', 'Grime', 'Ambient', 'Synthwave'], 'chip', style, value => { style = value; });
+  for (const label of ['Pop', 'Hip-hop', 'Lo-fi', 'Cinematic', 'Rock', 'Jazz', 'Grime', 'Ambient', 'Synthwave']) {
+    const chip = Button({ label, variant: 'chip', onClick: () => {
+      if (styles.has(label)) styles.delete(label);
+      else styles.add(label);
+      chip.setAttribute('aria-pressed', String(styles.has(label)));
+    } });
+    chip.setAttribute('aria-pressed', 'false');
+    element.querySelector('.style-chips').append(chip);
+  }
   return { element, getValues: () => ({
     title: element.querySelector('[name="trackTitle"]').value.trim(),
     lyrics: element.querySelector('[name="lyrics"]').value.trim(),
-    voice, style,
+    voice, styles: [...styles],
   }) };
 }

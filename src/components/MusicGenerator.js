@@ -1,6 +1,6 @@
 import { Button } from './Button.js';
-import { Icon } from './Icon.js?v=custom-1';
-import { CustomMusicFields } from './CustomMusicFields.js';
+import { Icon } from './Icon.js?v=custom-2';
+import { CustomMusicFields } from './CustomMusicFields.js?v=custom-2';
 
 const suggestions = [
   'A dreamy indie pop song about a late-night drive, with warm vocals and a gentle synth beat.',
@@ -15,8 +15,8 @@ export function MusicGenerator({ onGenerate, onLyricsGenerate }) {
   form.className = 'music-generator';
   form.setAttribute('aria-label', 'Music generator');
   form.innerHTML = `<div class="generation-modes" role="group" aria-label="Generation mode"></div>
-    <label class="music-field prompt-field"><span>Describe your track</span>
-    <textarea id="music-prompt" name="prompt" aria-label="Describe your track" placeholder="Turn any idea into a song" required></textarea></label>
+    <div class="music-field prompt-field"><div class="field-heading prompt-heading"><label for="music-prompt">Describe your track</label><span class="prompt-shuffle-slot"></span></div>
+    <textarea id="music-prompt" name="prompt" aria-label="Describe your track" placeholder="Turn any idea into a song" required></textarea></div>
     <div class="generation-actions"></div>`;
   const modes = form.querySelector('.generation-modes');
   const prompt = form.querySelector('textarea');
@@ -43,7 +43,8 @@ export function MusicGenerator({ onGenerate, onLyricsGenerate }) {
   const generate = Button({ label: 'Generate music', variant: 'generate' });
   generate.type = 'submit';
   generate.prepend(Icon('sparkles'));
-  form.querySelector('.generation-actions').append(shuffle, generate);
+  form.querySelector('.prompt-shuffle-slot').append(shuffle);
+  form.querySelector('.generation-actions').append(generate);
   prompt.addEventListener('input', () => prompt.setCustomValidity(''));
   form.addEventListener('submit', event => {
     event.preventDefault();

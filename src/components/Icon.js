@@ -2,6 +2,7 @@
 export const iconAssets = Object.freeze({
   tools: 'tools-grid.png',
   shuffle: 'shuffle.svg',
+  listSparkle: 'list-sparkle.svg',
   sparkles: 'sparkles.svg',
   chevronDown: 'chevron-down.svg',
   chevronRight: 'chevron-right.svg',

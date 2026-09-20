@@ -14,3 +14,5 @@ Original artwork exported from FORMA (`7PuiN52bUs4UnIIlfcx6RD`). SVG content and
 Earlier header, music illustration and tool-card exports remain at the assets root; their mappings are in `docs/design-system.md`. No runtime dependency on temporary Figma URLs is required.
 
 Custom component 57:942 adds icons/chevron-right.svg (Figma export a7306.svg), preserved at 24 × 24px.
+
+icons/list-sparkle.svg is the exact 24px Figma export 8b473.svg from component 57:942, used for Lyrics Generate. Both section headers now use chevron-down.svg.

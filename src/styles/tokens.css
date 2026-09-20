@@ -91,3 +91,6 @@
   --color-border-generator:#e8e8e8;
   --shadow-generator:0 0 8px rgb(232 220 255 / .5);
 }
+
+/* Custom section outlines from Figma 57:942. */
+:root{--color-border-music-section:#b1b1b1}
