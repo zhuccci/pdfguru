@@ -1,7 +1,7 @@
 import { Header } from '../components/Header.js?v=signed-in-1';
 import { Button } from '../components/Button.js';
 import { PlanCard } from '../components/PlanCard.js?v=plans-2';
-import { plans } from '../data/plans.js';
+import { plans } from '../data/plans.js?v=plan-terms-1';
 
 /** Pricing selection screen from FORMA 130:1659; checkout remains a prototype. */
 export function PlansPage(actions) {
@@ -23,19 +23,25 @@ export function PlansPage(actions) {
   grid.className = 'plans-grid';
   grid.innerHTML = '<legend class="sr-only">Choose a plan</legend>';
   const cards = plans.map(plan => PlanCard(plan, plan.id === 'full'));
-  cards.forEach(card => {
-    card.input.addEventListener('change', () => cards.forEach(candidate => candidate.setSelected(candidate === card)));
-    grid.append(card.element);
-  });
+  cards.forEach(card => grid.append(card.element));
 
   const legal = document.createElement('div');
   legal.className = 'plans-legal';
   legal.innerHTML = `
-    <p>You will be charged $299.00 (tax incl.) upon purchase and automatically billed annually unless you cancel at least 24 hours before the end of the current billing period.</p>
-    <p>To access your first document for free please click <button type="button" data-preview="Account">here</button>.</p>
-    <p>See our <button type="button" data-preview="Subscription terms">Subscription terms</button> for details on cancellation and refunds. We provide refunds in accordance with our <button type="button" data-preview="Refund Policy">Refund Policy</button>.</p>
+    <p class="plans-legal__charge"></p>
+    <p>To access your first document for free please click <a href="https://pdfguru.com/app/account" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    <p>See our <a href="https://pdfguru.com/subscription-terms" target="_blank" rel="noopener noreferrer">Subscription terms</a> for details on cancellation and refunds. We provide refunds in accordance with our <a href="https://pdfguru.com/refund-policy" target="_blank" rel="noopener noreferrer">Refund Policy</a>.</p>
   `;
-  legal.querySelectorAll('[data-preview]').forEach(link => link.addEventListener('click', () => actions.onPreview(link.dataset.preview)));
+  const charge = legal.querySelector('.plans-legal__charge');
+  function selectPlan(card) {
+    cards.forEach(candidate => candidate.setSelected(candidate === card));
+    const plan = plans.find(candidate => candidate.id === card.input.value);
+    charge.textContent = plan.postTrialMonthly
+      ? `After 7 days, you will be charged ${plan.postTrialMonthly} (tax incl.)/month unless you cancel 24 hours before the trial ends.`
+      : 'You will be charged $299.00 (tax incl.) upon purchase and automatically billed annually unless you cancel at least 24 hours before the end of the current billing period.';
+  }
+  cards.forEach(card => card.input.addEventListener('change', () => selectPlan(card)));
+  selectPlan(cards[1]);
 
   const controls = document.createElement('div');
   controls.className = 'plans-actions';
