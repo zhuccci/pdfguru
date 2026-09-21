@@ -30,4 +30,5 @@ const actions = {
   onCreateAnotherTrack: () => { window.location.href = './music.html'; },
 };
 const page = document.body.dataset.page === 'results' ? TrackResultsPage(actions) : document.body.dataset.page === 'music' ? MusicPage(actions) : document.body.dataset.page === 'plans' ? PlansPage(actions) : HomePage(actions);
-app.replaceChildren(page, ...(document.body.dataset.page === 'plans' ? [] : [Footer(actions)]), dialog.element, unlockDialog.element);
+const footer = ['plans', 'results'].includes(document.body.dataset.page) ? null : Footer(actions);
+app.replaceChildren(page, ...(footer ? [footer] : []), dialog.element, unlockDialog.element);
