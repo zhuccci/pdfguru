@@ -1,0 +1,35 @@
+/* FORMA 130:1659: pricing selection screen. */
+body[data-page="plans"]{background:var(--color-bg-generator-page)}
+.plans-page{gap:0;padding:0}
+.plans-header{width:100%;padding:24px 32px;background:#fff}
+.plans-content{display:flex;flex-direction:column;width:min(1113px,calc(100% - 32px));margin:32px auto;padding:0 0 32px}
+.plans-content h1{font-size:48px;line-height:64.8px;font-weight:900}
+.plans-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;min-width:0;margin:32px 0 0;padding:0;border:0}
+.plan-card{position:relative;display:block;min-width:0;height:436px;border:2px solid #e8e8e8;border-radius:16px;background:#fff;cursor:pointer;overflow:hidden}
+.plan-card__input{position:absolute;inset:0;z-index:2;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.plan-card.is-selected{border:1px solid #7422e0;box-shadow:0 0 12px rgb(116 34 224 / .15)}
+.plan-card:focus-within{outline:3px solid #7422e0;outline-offset:3px}
+.plan-card__badge{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:4px;height:24px;background:#f5f0fe;color:#7422e0;font-size:14px;font-weight:600;line-height:22.4px}
+.plan-card__badge img{display:block;width:15px;height:16px}
+.plan-card__content{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:40px 40px 24px}
+.plan-card__title{font-size:24px;font-weight:700;line-height:33px;white-space:nowrap}
+.plan-card--popular .plan-card__title{color:#7422e0}
+.plan-card__price{display:flex;align-items:baseline;gap:4px;white-space:nowrap}
+.plan-card__price strong{font-size:24px;font-weight:700;line-height:33px}
+.plan-card__price strong span{font-size:15.5px;vertical-align:baseline}
+.plan-card__price small{font-size:15.5px;font-weight:400;color:rgb(119 119 119 / .8)}
+.plan-card__tax{margin-top:-12px;color:var(--color-text-muted);font-size:14px;line-height:22.4px;white-space:nowrap}
+.plan-card__features{display:flex;flex-direction:column;gap:8px;width:100%;margin:0;padding:0;list-style:none}
+.plan-card__features li{display:flex;align-items:center;gap:12px;min-height:24px;color:#000;font-size:16px;line-height:24px;white-space:nowrap}
+.plan-card__features li.is-unavailable,.plan-card__features li.is-muted{color:var(--color-text-muted)}
+.plan-card__features img{display:block;width:24px;height:24px;flex:none}
+.plans-legal{display:flex;flex-direction:column;align-items:center;margin-top:24px;text-align:center;color:rgb(119 119 119 / .8);font-size:14px;line-height:22.4px}
+.plans-legal button{padding:0;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:2px}
+.plans-actions{display:flex;justify-content:flex-end;gap:24px;margin-top:24px}
+.plans-actions .button{height:52px;min-height:52px;border-radius:12px}
+.plans-actions .button--secondary{font-size:18px;border-color:var(--color-border-secondary)}
+.plans-actions .button--generate{font-size:16px}
+body[data-page="plans"] .site-footer{margin-top:0}
+@media(max-width:1150px){.plans-grid{gap:16px}.plan-card__content{padding-inline:24px}.plan-card__features li{font-size:14px;gap:8px}}
+@media(max-width:800px){.plans-header{padding:16px}.plans-content{margin-top:24px}.plans-content h1{font-size:36px;line-height:1.25}.plans-grid{grid-template-columns:1fr;max-width:500px;width:100%;margin-inline:auto}.plan-card{height:auto;min-height:436px}.plan-card__content{padding-inline:40px}.plan-card__features li{font-size:16px;gap:12px}.plans-legal{margin-top:32px}}
+@media(max-width:520px){.plans-content h1{font-size:30px}.plan-card__content{padding-inline:24px}.plan-card__title{font-size:21px}.plan-card__features li{font-size:14px;gap:8px;white-space:normal}.plans-actions{justify-content:stretch;gap:12px}.plans-actions .button{flex:1;padding-inline:12px;font-size:15px}}

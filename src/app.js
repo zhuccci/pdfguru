@@ -1,6 +1,7 @@
 import { HomePage } from './pages/HomePage.js?v=signed-in-1';
 import { MusicPage } from './pages/MusicPage.js?v=signed-in-1';
-import { TrackResultsPage } from './pages/TrackResultsPage.js?v=signed-in-2';
+import { TrackResultsPage } from './pages/TrackResultsPage.js?v=plans-1';
+import { PlansPage } from './pages/PlansPage.js?v=plans-2';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
 import { UnlockDialog } from './components/UnlockDialog.js?v=signed-in-1';
@@ -23,8 +24,10 @@ const actions = {
   },
   onGenerate: () => { window.location.href = './results.html?rev=motion-4'; },
   onUnlock: () => unlockDialog.show(),
-  onDownload: () => dialog.show('Download full songs', 'Full song downloads are not connected in this prototype.'),
+  onDownload: () => { window.location.href = './plans.html'; },
+  onBackToResults: () => { window.location.href = './results.html?ready=1'; },
+  onContinuePlan: plan => dialog.show('Continue', `Checkout for ${plan.title} is not connected in this prototype.`),
   onCreateAnotherTrack: () => { window.location.href = './music.html'; },
 };
-const page = document.body.dataset.page === 'results' ? TrackResultsPage(actions) : document.body.dataset.page === 'music' ? MusicPage(actions) : HomePage(actions);
+const page = document.body.dataset.page === 'results' ? TrackResultsPage(actions) : document.body.dataset.page === 'music' ? MusicPage(actions) : document.body.dataset.page === 'plans' ? PlansPage(actions) : HomePage(actions);
 app.replaceChildren(page, Footer(actions), dialog.element, unlockDialog.element);

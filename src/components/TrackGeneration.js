@@ -73,13 +73,18 @@ export function TrackGeneration({ onPreview, onUnlock, onDownload, onCreateAnoth
   }
 
   let percent = 36;
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    progressTimer = window.setInterval(() => {
-      percent = Math.min(94, percent + 2);
-      progress.setProgress(percent);
-    }, 100);
+  let resultTimer;
+  if (new URLSearchParams(window.location.search).get('ready') === '1') {
+    showResult();
+  } else {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      progressTimer = window.setInterval(() => {
+        percent = Math.min(94, percent + 2);
+        progress.setProgress(percent);
+      }, 100);
+    }
+    resultTimer = window.setTimeout(showResult, 3800);
   }
-  const resultTimer = window.setTimeout(showResult, 3800);
   window.addEventListener('pagehide', () => { clearInterval(progressTimer); clearTimeout(resultTimer); }, { once: true });
   return panel;
 }
