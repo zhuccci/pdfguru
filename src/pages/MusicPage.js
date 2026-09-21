@@ -1,4 +1,4 @@
-import { Header } from '../components/Header.js';
+import { Header } from '../components/Header.js?v=signed-in-1';
 import { Features } from '../components/Features.js';
 import { MusicGenerator } from '../components/MusicGenerator.js?v=lyrics-1';
 

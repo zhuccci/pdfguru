@@ -1,5 +1,5 @@
 /** Figma 114:735. Visual-only login prompt for the music prototype. */
-export function UnlockDialog() {
+export function UnlockDialog({ onMockLogin }) {
   const dialog = document.createElement('dialog');
   dialog.className = 'unlock-dialog';
   dialog.setAttribute('aria-labelledby', 'unlock-dialog-title');
@@ -24,9 +24,10 @@ export function UnlockDialog() {
 
   const status = dialog.querySelector('.unlock-dialog__status');
   const showPrototypeStatus = () => { status.hidden = false; };
+  const finishMockLogin = () => { dialog.close(); onMockLogin(); };
   dialog.querySelector('.unlock-dialog__close').addEventListener('click', () => dialog.close());
-  dialog.querySelector('.unlock-dialog__google').addEventListener('click', showPrototypeStatus);
-  dialog.querySelector('.unlock-dialog__submit').addEventListener('click', showPrototypeStatus);
+  dialog.querySelector('.unlock-dialog__google').addEventListener('click', finishMockLogin);
+  dialog.querySelector('.unlock-dialog__submit').addEventListener('click', finishMockLogin);
   dialog.querySelector('.unlock-dialog__signup button').addEventListener('click', showPrototypeStatus);
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;

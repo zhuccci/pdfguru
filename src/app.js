@@ -1,18 +1,30 @@
-import { HomePage } from './pages/HomePage.js';
-import { MusicPage } from './pages/MusicPage.js?v=lyrics-1';
-import { TrackResultsPage } from './pages/TrackResultsPage.js?v=unlock-1';
+import { HomePage } from './pages/HomePage.js?v=signed-in-1';
+import { MusicPage } from './pages/MusicPage.js?v=signed-in-1';
+import { TrackResultsPage } from './pages/TrackResultsPage.js?v=signed-in-2';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
-import { UnlockDialog } from './components/UnlockDialog.js?v=unlock-2';
+import { UnlockDialog } from './components/UnlockDialog.js?v=signed-in-1';
 
 const app = document.querySelector('#app');
 const dialog = Dialog();
-const unlockDialog = UnlockDialog();
+const unlockDialog = UnlockDialog({ onMockLogin: () => {
+  sessionStorage.setItem('pdfguru:mock-signed-in', 'true');
+  actions.isSignedIn = true;
+  window.dispatchEvent(new Event('pdfguru:mock-login'));
+} });
 const actions = {
+  isSignedIn: sessionStorage.getItem('pdfguru:mock-signed-in') === 'true',
   onPreview: label => dialog.show(label, 'This destination is not connected in the prototype yet.'),
-  onLogin: () => dialog.show('Log in', 'This is a visual prototype. Sign-in is not connected and no credentials are collected.'),
+  onLogin: () => document.body.dataset.page === 'results' ? unlockDialog.show() : dialog.show('Log in', 'This is a visual prototype. Sign-in is not connected and no credentials are collected.'),
+  onLogout: () => {
+    sessionStorage.removeItem('pdfguru:mock-signed-in');
+    actions.isSignedIn = false;
+    window.dispatchEvent(new Event('pdfguru:mock-logout'));
+  },
   onGenerate: () => { window.location.href = './results.html?rev=motion-4'; },
   onUnlock: () => unlockDialog.show(),
+  onDownload: () => dialog.show('Download full songs', 'Full song downloads are not connected in this prototype.'),
+  onCreateAnotherTrack: () => { window.location.href = './music.html'; },
 };
 const page = document.body.dataset.page === 'results' ? TrackResultsPage(actions) : document.body.dataset.page === 'music' ? MusicPage(actions) : HomePage(actions);
 app.replaceChildren(page, Footer(actions), dialog.element, unlockDialog.element);

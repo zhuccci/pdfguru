@@ -1,5 +1,5 @@
-import { Header } from '../components/Header.js';
-import { TrackGeneration } from '../components/TrackGeneration.js?v=motion-4';
+import { Header } from '../components/Header.js?v=signed-in-1';
+import { TrackGeneration } from '../components/TrackGeneration.js?v=signed-in-2';
 
 /** Figma page 105:330. Shares the site's header and footer via app.js. */
 export function TrackResultsPage(actions) {
@@ -12,6 +12,9 @@ export function TrackResultsPage(actions) {
   main.append(header, TrackGeneration({
     onPreview: () => actions.onPreview('10-second audio preview'),
     onUnlock: actions.onUnlock,
+    onDownload: actions.onDownload,
+    onCreateAnotherTrack: actions.onCreateAnotherTrack,
+    isSignedIn: actions.isSignedIn,
   }));
   return main;
 }

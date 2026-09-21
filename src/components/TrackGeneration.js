@@ -4,7 +4,7 @@ import { TrackCard } from './TrackCard.js?v=tracks-3';
 import { WaveformProgress } from './WaveformProgress.js?v=tracks-1';
 
 /** Figma component variants 105:789 (loading) and 105:791 (ready). */
-export function TrackGeneration({ onPreview, onUnlock }) {
+export function TrackGeneration({ onPreview, onUnlock, onDownload, onCreateAnotherTrack, isSignedIn = false }) {
   const panel = document.createElement('section');
   panel.className = 'track-generation';
   panel.dataset.state = 'loading';
@@ -35,7 +35,21 @@ export function TrackGeneration({ onPreview, onUnlock }) {
   const unlock = Button({ label: 'Unlock full songs', variant: 'generate', onClick: onUnlock });
   unlock.classList.add('track-generation__unlock');
   unlock.prepend(Icon('unlock'));
-  readyStage.querySelector('.track-generation__action').append(unlock);
+  const download = Button({ label: 'Download full songs', variant: 'generate', onClick: onDownload });
+  download.classList.add('track-generation__unlock');
+  download.prepend(Icon('unlock'));
+  const createAnother = Button({ label: 'Create another track', variant: 'plain', className: 'track-generation__again', onClick: onCreateAnotherTrack });
+  const action = readyStage.querySelector('.track-generation__action');
+  action.append(unlock, download, createAnother);
+  function setSignedIn(signedIn) {
+    panel.dataset.signedIn = String(signedIn);
+    unlock.hidden = signedIn;
+    download.hidden = !signedIn;
+    createAnother.hidden = !signedIn;
+  }
+  setSignedIn(isSignedIn);
+  window.addEventListener('pdfguru:mock-login', () => setSignedIn(true));
+  window.addEventListener('pdfguru:mock-logout', () => setSignedIn(false));
 
   const announcement = document.createElement('span');
   announcement.className = 'sr-only';
