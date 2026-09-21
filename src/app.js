@@ -3,7 +3,7 @@ import { MusicPage } from './pages/MusicPage.js?v=lyrics-1';
 import { TrackResultsPage } from './pages/TrackResultsPage.js?v=unlock-1';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
-import { UnlockDialog } from './components/UnlockDialog.js';
+import { UnlockDialog } from './components/UnlockDialog.js?v=unlock-2';
 
 const app = document.querySelector('#app');
 const dialog = Dialog();
