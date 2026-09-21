@@ -8,6 +8,9 @@ export const iconAssets = Object.freeze({
   chevronDown: 'chevron-down.svg',
   chevronRight: 'chevron-right.svg',
   chevronDownLight: 'chevron-down-light.svg',
+  loader: 'loader.svg',
+  play: 'play.svg',
+  unlock: 'unlock.svg',
 });
 
 export function Icon(name) {

@@ -1,0 +1,37 @@
+/* Figma 105:330, 105:789 and 105:791. */
+body[data-page="results"]{background:var(--color-bg-generator-page)}
+.track-results-page{padding:0 24px;gap:0}
+.track-results-page .music-header{padding:24px 32px}
+.track-generation{display:flex;flex-direction:column;align-items:center;width:min(686px,100%);margin:0 auto;padding:24px;border:.5px solid var(--color-border-generator);border-radius:24px;background:var(--color-bg-page);box-shadow:var(--shadow-generator)}
+.track-generation__heading{width:100%;text-align:center}
+.track-generation__heading h1{font-size:48px;font-weight:900;line-height:64.8px}
+.track-generation__description{margin-top:16px;font-size:20px;font-weight:400;line-height:32px;text-align:center}
+.track-generation__progress{width:100%;margin-top:48px}
+.waveform-progress{display:flex;align-items:center;justify-content:space-between;gap:2px;width:100%;height:40px;overflow:hidden}
+.waveform-bar{display:block;flex:1 1 0;min-width:0;max-width:8px;border-radius:8px;background:var(--color-bg-hero);transition:background-color 160ms ease}
+.waveform-bar.is-filled{background:#7c3aed}
+.track-generation__cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%;margin-top:48px}
+.track-card{display:flex;flex-direction:column;min-width:0;gap:4px}
+.track-card__artwork{display:grid;place-items:center;width:100%;height:224px;border-radius:16px;overflow:hidden}
+.track-card--1 .track-card__artwork{background:linear-gradient(180deg,rgba(57,155,230,.2),rgba(213,188,255,.2)),#f8f8f8}
+.track-card--2 .track-card__artwork{background:linear-gradient(180deg,rgba(145,105,255,.2),rgba(255,232,211,.2)),#f8f8f8}
+.track-card__loader{animation:track-loader 1s linear infinite}
+@keyframes track-loader{to{transform:rotate(360deg)}}
+.track-card__caption{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;font-size:16px;line-height:22px}
+.track-card[data-state="loading"] .track-card__caption{color:var(--color-text-muted);font-weight:700}
+.track-card[data-state="ready"]{gap:8px}
+.track-card[data-state="ready"] .track-card__artwork{background:linear-gradient(180deg,#399be6,#d5bcff)}
+.track-card--2[data-state="ready"] .track-card__artwork{background:linear-gradient(180deg,#9169ff,#ffe8d3)}
+.track-card__caption strong{min-width:0;font-size:16px;font-weight:700;line-height:22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.track-card__caption span{flex:none;color:var(--color-text-muted);font-size:14px;font-weight:500;line-height:22px;white-space:nowrap}
+.track-card__play{display:grid;place-items:center;width:40px;height:40px;padding:8px;border:0;border-radius:50%;background:transparent;cursor:pointer}
+.track-card__play:focus-visible{outline:3px solid white;outline-offset:4px}
+.track-generation__action{display:none;width:100%;margin-top:48px}
+.track-generation[data-state="ready"] .track-generation__progress{display:none}
+.track-generation[data-state="ready"] .track-generation__cards{gap:24px}
+.track-generation[data-state="ready"] .track-generation__action{display:block}
+.track-generation__unlock{display:flex;width:100%;height:52px}
+body[data-page="results"] .site-footer{margin-top:96px}
+@media(max-width:800px){.track-results-page{padding:0 16px}.track-results-page .music-header{padding:24px 16px}.track-generation__heading h1{font-size:36px;line-height:1.25}.track-card__artwork{height:clamp(150px,28vw,224px)}}
+@media(max-width:520px){.track-generation{padding:16px}.track-generation__heading h1{font-size:30px}.track-generation__description{font-size:16px;line-height:24px}.track-generation__cards,.track-generation[data-state="ready"] .track-generation__cards{gap:12px}.track-card__artwork{height:150px}.track-card__caption{align-items:flex-start;flex-direction:column;gap:0}body[data-page="results"] .site-footer{margin-top:64px}}
+@media(prefers-reduced-motion:reduce){.track-card__loader{animation:none}.waveform-bar{transition:none}}
