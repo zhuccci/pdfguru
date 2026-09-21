@@ -1,7 +1,7 @@
 import { Icon } from './Icon.js?v=tracks-1';
 
 /** Figma 105:713 / 105:856. The same visual component in loading and ready states. */
-export function TrackCard({ version, title, onPreview, audioSrc }) {
+export function TrackCard({ version, title, onPreview, audioSrc, onPlaybackStart }) {
   const root = document.createElement('div');
   root.className = `track-card track-card--${version}`;
   const artwork = document.createElement('div');
@@ -47,7 +47,11 @@ export function TrackCard({ version, title, onPreview, audioSrc }) {
     play.type = 'button';
     if (audio) {
       updatePlayback(play);
-      for (const event of ['playing', 'pause', 'ended']) audio.addEventListener(event, () => updatePlayback(play));
+      audio.addEventListener('playing', () => {
+        onPlaybackStart?.();
+        updatePlayback(play);
+      });
+      for (const event of ['pause', 'ended']) audio.addEventListener(event, () => updatePlayback(play));
       play.addEventListener('click', () => {
         if (audio.paused) audio.play().catch(() => {
           play.disabled = true;
@@ -69,5 +73,5 @@ export function TrackCard({ version, title, onPreview, audioSrc }) {
   }
 
   setState('loading');
-  return { element: root, setState };
+  return { element: root, setState, pause: () => audio?.pause() };
 }

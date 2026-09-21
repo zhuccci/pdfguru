@@ -20,3 +20,5 @@ icons/list-sparkle.svg is the exact 24px Figma export 8b473.svg from component 5
 icons/audio.svg is the exact 24px Figma export a5965.svg from component 57:942, used by the Custom “Create my song” action.
 
 `audio/emerald-sky-ver-2.mp3` is the user-supplied Version 2 preview, copied from `Comp 1.mp3` without modification. It plays locally in the results card; it is not a Figma export.
+
+`audio/emerald-sky-ver-1.mp3` is the user-supplied Version 1 preview, copied from `Comp 1_1.mp3` without modification.
