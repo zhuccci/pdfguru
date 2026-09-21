@@ -1,5 +1,6 @@
 import { Button } from './Button.js';
 import { Icon } from './Icon.js?v=motion-2';
+import { emeraldSkyLyrics } from '../data/emeraldSkyLyrics.js';
 
 const styleNames = ['Pop', 'Hip-hop', 'Lo-fi', 'Cinematic', 'Rock', 'Jazz', 'Grime', 'Ambient', 'Synthwave'];
 const formatOptions = [['Track', 'Structured song'], ['Loop', 'Seamless repeat'], ['Jingle', 'Short catchy hook']];
@@ -39,7 +40,7 @@ function Selectors({ options, name, initial, onChange }) {
 }
 
 /** Figma 57:942. Keeps field state when sections or Custom mode are hidden. */
-export function CustomMusicFields({ onLyricsGenerate }) {
+export function CustomMusicFields() {
   const element = document.createElement('div');
   element.className = 'custom-music-fields';
   element.inert = true;
@@ -63,7 +64,9 @@ export function CustomMusicFields({ onLyricsGenerate }) {
   element.querySelector('.style-options .options-heading').append(Disclosure({ label: 'Style & format', bodyId: 'style-options-body', root: element }));
   element.querySelector('.duration-options .options-heading').append(Disclosure({ label: 'Duration', bodyId: 'duration-options-body', root: element }));
 
-  const lyricsGenerate = Button({ label: 'Generate', variant: 'shuffle', onClick: onLyricsGenerate });
+  const lyricsGenerate = Button({ label: 'Generate', variant: 'shuffle', onClick: () => {
+    element.querySelector('[name="lyrics"]').value = emeraldSkyLyrics;
+  } });
   lyricsGenerate.prepend(Icon('listSparkle'));
   element.querySelector('.lyrics-generate-slot').append(lyricsGenerate);
 
