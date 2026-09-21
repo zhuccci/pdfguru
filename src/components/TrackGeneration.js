@@ -1,21 +1,21 @@
 import { Button } from './Button.js';
 import { Icon } from './Icon.js?v=tracks-1';
-import { TrackCard } from './TrackCard.js?v=tracks-1';
+import { TrackCard } from './TrackCard.js?v=tracks-2';
 import { WaveformProgress } from './WaveformProgress.js?v=tracks-1';
 
 /** Figma component variants 105:789 (loading) and 105:791 (ready). */
-export function TrackGeneration({ prompt, onPreview, onUnlock }) {
+export function TrackGeneration({ onPreview, onUnlock }) {
   const panel = document.createElement('section');
   panel.className = 'track-generation';
   panel.setAttribute('aria-labelledby', 'track-generation-title');
   panel.innerHTML = `<div class="track-generation__heading"><h1 id="track-generation-title" aria-live="polite">Composing your tracks</h1></div><div class="track-generation__progress"></div><p class="track-generation__description"></p><div class="track-generation__cards"></div><div class="track-generation__action"></div>`;
   const description = panel.querySelector('.track-generation__description');
-  description.textContent = prompt || 'Song about Emerald sky and a long-awaited return';
+  description.textContent = 'Song about Emerald sky and a long-awaited return';
   const progress = WaveformProgress();
   panel.querySelector('.track-generation__progress').append(progress.element);
   const cards = [
     TrackCard({ version: 1, title: 'Emerald Sky', onPreview }),
-    TrackCard({ version: 2, title: 'Emerald Sky ver. 2', onPreview }),
+    TrackCard({ version: 2, title: 'Emerald Sky ver. 2', onPreview, audioSrc: new URL('../../assets/audio/emerald-sky-ver-2.mp3', import.meta.url).href }),
   ];
   panel.querySelector('.track-generation__cards').append(...cards.map(card => card.element));
 

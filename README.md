@@ -32,7 +32,7 @@ Open http://127.0.0.1:4174. GitHub Pages serves the repository root.
 - `src/styles/music.css`: generator layout and control states from frame 43:154.
 - `src/styles/results.css`: loading and ready variants from frames 105:789 and 105:791.
 - `src/data/tools.js`: tool instance data and footer groups.
-- `assets/`: exact Figma-exported SVG and PNG assets.
+- `assets/`: Figma-exported SVG/PNG assets and the supplied Version 2 MP3 preview.
 - `assets/icons/`: named UI icons; `Icon.js` provides the registry and 24px slot.
 - `assets/brand/`: footer logo artwork. See `assets/README.md` for export provenance.
 - `design-tokens.json`: token values, aliases, CSS names and Figma variable IDs.
@@ -40,6 +40,6 @@ Open http://127.0.0.1:4174. GitHub Pages serves the repository root.
 
 ## Prototype boundaries
 
-File selection and drag/drop validate extension and the 100 MB size cap locally. Files are never uploaded. The music page supports editable prompts, shuffle suggestions and required-prompt validation. Custom mode adds optional vocals and lyrics, Male/Female voice, independently selectable styles, Format, and Duration, matching Figma 57:942. Entries persist when switching modes or collapsing sections. Submitting either mode stores the prompt in session storage for the results page. TrackGeneration animates a semantic waveform progress indicator, then swaps TrackCard instances from loading to ready after 3.8 seconds. Preview playback and unlocking show explicit prototype messages because no audio backend is connected. Lyrics generation, login and other tool/footer destinations remain preview dialogs. No prompts, files, or credentials are sent to a server.
+File selection and drag/drop validate extension and the 100 MB size cap locally. Files are never uploaded. The music page supports an optional editable prompt and shuffle suggestions. Custom mode adds optional vocals and lyrics, Male/Female voice, independently selectable styles, Format, and Duration, matching Figma 57:942. Entries persist when switching modes or collapsing sections. Submitting either mode opens the results page, which shows the fixed Emerald Sky loading text. TrackGeneration animates a semantic waveform progress indicator, then swaps TrackCard instances from loading to ready after 3.8 seconds. Version 2 plays the supplied MP3 through its card button; Version 1 and unlocking show explicit prototype messages until their content is supplied. Lyrics generation, login and other tool/footer destinations remain preview dialogs. No prompts, files, or credentials are sent to a server.
 
 Latest Custom revision: section borders are #b1b1b1; Shuffle sits beside the prompt label without focusing the input; Lyrics Generate uses the original list-sparkle icon. Lyrics fields have 24px gaps. Styles toggle independently, allow all nine selections and are emitted as a styles array. Voice remains a single selection.

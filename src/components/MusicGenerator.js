@@ -16,7 +16,7 @@ export function MusicGenerator({ onGenerate, onLyricsGenerate }) {
   form.setAttribute('aria-label', 'Music generator');
   form.innerHTML = `<div class="generation-modes" role="group" aria-label="Generation mode"></div>
     <div class="music-field prompt-field"><div class="field-heading prompt-heading"><label for="music-prompt">Describe your track</label><span class="prompt-shuffle-slot"></span></div>
-    <textarea id="music-prompt" name="prompt" aria-label="Describe your track" placeholder="Turn any idea into a song" required></textarea></div>
+    <textarea id="music-prompt" name="prompt" aria-label="Describe your track" placeholder="Turn any idea into a song"></textarea></div>
     <div class="generation-actions"></div>`;
   const modes = form.querySelector('.generation-modes');
   const prompt = form.querySelector('textarea');
@@ -45,7 +45,6 @@ export function MusicGenerator({ onGenerate, onLyricsGenerate }) {
   const shuffle = Button({ label: 'Shuffle', variant: 'shuffle', onClick: () => {
     suggestionIndex = (suggestionIndex + 1 + Math.floor(Math.random() * (suggestions.length - 1))) % suggestions.length;
     prompt.value = suggestions[suggestionIndex];
-    prompt.setCustomValidity('');
   } });
   shuffle.prepend(Icon('shuffle'));
   const generate = Button({ label: 'Generate music', variant: 'generate' });
@@ -53,14 +52,8 @@ export function MusicGenerator({ onGenerate, onLyricsGenerate }) {
   generate.prepend(Icon('sparkles'));
   form.querySelector('.prompt-shuffle-slot').append(shuffle);
   form.querySelector('.generation-actions').append(generate);
-  prompt.addEventListener('input', () => prompt.setCustomValidity(''));
   form.addEventListener('submit', event => {
     event.preventDefault();
-    if (!prompt.value.trim()) {
-      prompt.setCustomValidity('Describe the song you want to create.');
-      prompt.reportValidity();
-      return;
-    }
     onGenerate({ prompt: prompt.value.trim(), mode, ...(mode === 'Custom' ? custom.getValues() : {}) });
   });
   return form;
