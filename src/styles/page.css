@@ -1,4 +1,6 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--color-text-primary);background:var(--color-bg-page);font-family:var(--font-family);font-size:16px;font-variation-settings:'YTLC' 500,'wdth' 100}button,input{font:inherit}button{cursor:pointer;border:0;background:none;color:inherit}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible{outline:3px solid var(--color-text-link);outline-offset:4px}a{color:inherit}h1,h2,h3,p{margin:0}h1,h2{font-size:48px;font-weight:900;line-height:64.8px}button[hidden],[hidden]{display:none!important}
+#app{display:flex;min-height:100vh;min-height:100dvh;flex-direction:column}
+#app>main{flex:1 0 auto}
 .skip-link{position:fixed;left:16px;top:-60px;background:white;padding:12px;z-index:10}.skip-link:focus{top:16px}
 main{--module-width:min(1040px,calc(100% - 32px));display:flex;flex-direction:column;gap:24px;padding:24px 24px 0}
 .hero{border-radius:40px;background:var(--color-bg-hero);padding:24px 32px;text-align:center}
