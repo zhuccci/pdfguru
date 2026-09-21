@@ -24,7 +24,7 @@ Open http://127.0.0.1:4174. GitHub Pages serves the repository root.
 ## Structure
 
 - `src/app.js`: composes the requested page with shared footer and preview dialog.
-- `src/pages/`: HomePage, MusicPage, TrackResultsPage and PlansPage composition; all pages reuse Header and Footer.
+- `src/pages/`: HomePage, MusicPage, TrackResultsPage and PlansPage composition; all pages reuse Header, while the plan selection screen has no footer.
 - `src/components/`: reusable Header, Footer, Features, Icon, MusicGenerator, TrackGeneration, TrackCard, PlanCard, WaveformProgress, Button, ToolCard, UploadZone and Dialog modules.
 - `src/styles/tokens.css`: CSS variables exported from Figma; semantic roles alias primitives.
 - `src/styles/components.css`: shared component states.
