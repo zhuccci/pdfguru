@@ -9,7 +9,7 @@ export function UnlockDialog() {
       <button class="unlock-dialog__close" type="button" aria-label="Close dialog"><img src="./assets/icons/close.svg" alt=""></button>
     </div>
     <div class="unlock-dialog__options">
-      <button class="unlock-dialog__google" type="button"><img src="./assets/icons/google.png" alt="">Continue with Google</button>
+      <button class="unlock-dialog__google" type="button"><img src="./assets/icons/google-mark.png" width="24" height="24" alt="">Continue with Google</button>
       <div class="unlock-dialog__divider"><span>or</span></div>
       <label class="unlock-dialog__email-label" for="unlock-email">Email</label>
       <div class="unlock-dialog__email-field">
