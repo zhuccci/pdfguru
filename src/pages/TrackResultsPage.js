@@ -11,7 +11,7 @@ export function TrackResultsPage(actions) {
   header.append(Header(actions));
   main.append(header, TrackGeneration({
     onPreview: () => actions.onPreview('10-second audio preview'),
-    onUnlock: () => actions.onPreview('Unlock full songs'),
+    onUnlock: actions.onUnlock,
   }));
   return main;
 }

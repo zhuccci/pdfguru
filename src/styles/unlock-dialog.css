@@ -1,0 +1,25 @@
+/* Login mockup from FORMA 114:735. The controls intentionally have no auth backend. */
+.unlock-dialog{width:min(564px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;margin:auto;padding:24px;border:0;border-radius:16px;background:#fff;color:var(--color-text-primary);box-shadow:0 0 8px rgb(0 0 0 / .16)}
+.unlock-dialog::backdrop{background:rgb(0 0 0 / .45)}
+.unlock-dialog__header{position:relative;display:flex;align-items:center;justify-content:center;min-height:32px}
+.unlock-dialog__header h2{padding:0 38px;text-align:center;font-size:24px;font-weight:700;line-height:32px}
+.unlock-dialog__close{position:absolute;top:0;right:0;display:grid;place-items:center;width:32px;height:32px;padding:0}
+.unlock-dialog__close img{display:block;width:32px;height:32px}
+.unlock-dialog__options{display:flex;flex-direction:column;margin-top:40px}
+.unlock-dialog__google{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:50px;padding:8px 16px;border:1px solid #c1c1c1;border-radius:8px;font-size:20px;line-height:32px}
+.unlock-dialog__google img{display:block;width:24px;height:24px;object-fit:contain}
+.unlock-dialog__google:hover{background:#f8f8f8}
+.unlock-dialog__divider{display:flex;align-items:center;gap:8px;margin:24px 0;color:var(--color-text-muted);font-size:14px;line-height:20px}
+.unlock-dialog__divider::before,.unlock-dialog__divider::after{content:"";height:1px;flex:1;background:#e5e5e5}
+.unlock-dialog__email-label{margin-bottom:4px;color:var(--color-text-muted);font-size:14px;line-height:20px}
+.unlock-dialog__email-field{display:flex;align-items:center;gap:8px;width:100%;height:42px;padding:8px;border:1px solid rgb(177 177 177 / .9);border-radius:8px}
+.unlock-dialog__email-field:focus-within{outline:2px solid var(--color-text-music-action);outline-offset:1px}
+.unlock-dialog__email-field img{display:block;width:24px;height:24px;flex:none}
+.unlock-dialog__email-field input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--color-text-primary);font-size:16px;line-height:24px}
+.unlock-dialog__email-field input::placeholder{color:var(--color-text-primary);opacity:1}
+.unlock-dialog__submit{display:flex;align-items:center;justify-content:center;width:100%;height:52px;margin-top:40px;padding:0 24px;border-radius:12px;background:#7422e0;color:#fff;font-size:16px;font-weight:700;line-height:22px}
+.unlock-dialog__submit:hover{background:var(--color-button-generate-hover)}
+.unlock-dialog__signup{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:40px;text-align:center;font-size:20px;line-height:32px}
+.unlock-dialog__signup button{padding:0;color:#662eec;text-decoration:underline;text-underline-offset:2px;font-size:20px;line-height:32px}
+.unlock-dialog__status{margin-top:16px;text-align:center;color:var(--color-text-muted);font-size:14px;line-height:20px}
+@media(max-width:600px){.unlock-dialog{padding:20px}.unlock-dialog__header h2{font-size:20px;line-height:28px}.unlock-dialog__options{margin-top:32px}.unlock-dialog__google{font-size:17px}.unlock-dialog__submit,.unlock-dialog__signup{margin-top:32px}.unlock-dialog__signup{flex-wrap:wrap;gap:4px 12px;font-size:16px;line-height:24px}.unlock-dialog__signup button{font-size:16px;line-height:24px}}
