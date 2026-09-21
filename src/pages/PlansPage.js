@@ -49,7 +49,7 @@ export function PlansPage(actions) {
     Button({ label: 'Back to files', variant: 'secondary', onClick: actions.onBackToResults }),
     Button({ label: 'Continue', variant: 'generate', onClick: () => actions.onContinuePlan(plans.find(plan => plan.id === grid.querySelector('input:checked')?.value)) }),
   );
-  content.append(title, grid, legal, controls);
+  content.append(title, grid, controls, legal);
   main.append(header, content);
   return main;
 }

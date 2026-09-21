@@ -1,7 +1,7 @@
 import { HomePage } from './pages/HomePage.js?v=signed-in-1';
 import { MusicPage } from './pages/MusicPage.js?v=signed-in-1';
 import { TrackResultsPage } from './pages/TrackResultsPage.js?v=plans-1';
-import { PlansPage } from './pages/PlansPage.js?v=plan-terms-2';
+import { PlansPage } from './pages/PlansPage.js?v=plan-terms-below-1';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
 import { UnlockDialog } from './components/UnlockDialog.js?v=signed-in-1';
