@@ -1,5 +1,5 @@
 /* Login mockup from FORMA 114:735. The controls intentionally have no auth backend. */
-.unlock-dialog{width:min(564px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;margin:auto;padding:24px;border:0;border-radius:16px;background:#fff;color:var(--color-text-primary);box-shadow:0 0 8px rgb(0 0 0 / .16)}
+.unlock-dialog{position:fixed;inset:auto;top:var(--unlock-dialog-center-y,50%);left:50%;transform:translate(-50%,-50%);width:min(564px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;margin:0;padding:24px;border:0;border-radius:16px;background:#fff;color:var(--color-text-primary);box-shadow:0 0 8px rgb(0 0 0 / .16)}
 .unlock-dialog::backdrop{background:rgb(0 0 0 / .45)}
 .unlock-dialog__header{position:relative;display:flex;align-items:center;justify-content:center;min-height:32px}
 .unlock-dialog__header h2{padding:0 38px;text-align:center;font-size:24px;font-weight:700;line-height:32px}

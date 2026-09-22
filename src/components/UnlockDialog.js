@@ -35,11 +35,29 @@ export function UnlockDialog({ onMockLogin }) {
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
   });
 
+  // Center the modal in the visible light area above the footer.
+  function positionDialog() {
+    if (!dialog.open) return;
+    const footerTop = document.querySelector('.site-footer')?.getBoundingClientRect().top ?? window.innerHeight;
+    const lightAreaBottom = Math.min(window.innerHeight, Math.max(0, footerTop));
+    const dialogHeight = dialog.getBoundingClientRect().height;
+    const halfHeight = dialogHeight / 2;
+    const center = Math.max(halfHeight + 16, Math.min(lightAreaBottom / 2, window.innerHeight - halfHeight - 16));
+    dialog.style.setProperty('--unlock-dialog-center-y', `${center}px`);
+  }
+  dialog.addEventListener('close', () => {
+    window.removeEventListener('resize', positionDialog);
+    window.removeEventListener('scroll', positionDialog);
+  });
+
   return {
     element: dialog,
     show() {
       status.hidden = true;
       dialog.showModal();
+      positionDialog();
+      window.addEventListener('resize', positionDialog);
+      window.addEventListener('scroll', positionDialog);
     },
   };
 }

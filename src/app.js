@@ -5,7 +5,7 @@ import { PlansPage } from './pages/PlansPage.js?v=songs-1';
 import { SongsPage } from './pages/SongsPage.js?v=songs-2';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
-import { UnlockDialog } from './components/UnlockDialog.js?v=signed-in-1';
+import { UnlockDialog } from './components/UnlockDialog.js?v=light-area-1';
 
 const app = document.querySelector('#app');
 const dialog = Dialog();
