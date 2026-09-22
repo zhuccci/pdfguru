@@ -24,7 +24,7 @@ export function PaymentSuccessPage(actions) {
   title.textContent = 'Payment successful!';
   const message = document.createElement('p');
   message.className = 'payment-success-message';
-  message.append('Your full songs are downloading now. ', document.createElement('br'), 'If the download doesn’t start, ');
+  message.append('Your full songs and certificate are downloading now. ', document.createElement('br'), 'If the download doesn’t start, ');
   const retry = document.createElement('button');
   retry.type = 'button';
   retry.className = 'payment-success-retry';
