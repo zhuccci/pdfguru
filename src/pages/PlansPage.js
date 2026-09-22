@@ -22,7 +22,9 @@ export function PlansPage(actions) {
   const grid = document.createElement('fieldset');
   grid.className = 'plans-grid';
   grid.innerHTML = '<legend class="sr-only">Choose a plan</legend>';
-  const cards = plans.map(plan => PlanCard(plan, plan.id === 'full'));
+  const previousSelection = sessionStorage.getItem('pdfguru:selected-plan');
+  const initialPlan = plans.find(plan => plan.id === previousSelection) ?? plans[1];
+  const cards = plans.map(plan => PlanCard(plan, plan.id === initialPlan.id));
   cards.forEach(card => grid.append(card.element));
 
   const legal = document.createElement('div');
@@ -41,7 +43,7 @@ export function PlansPage(actions) {
       : 'You will be charged $299.00 (tax incl.) upon purchase and automatically billed annually unless you cancel at least 24 hours before the end of the current billing period.';
   }
   cards.forEach(card => card.input.addEventListener('change', () => selectPlan(card)));
-  selectPlan(cards[1]);
+  selectPlan(cards.find(card => card.input.value === initialPlan.id));
 
   const controls = document.createElement('div');
   controls.className = 'plans-actions';

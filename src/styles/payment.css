@@ -1,0 +1,33 @@
+/* FORMA 137:813: payment details prototype. */
+body[data-page="payment"]{background:var(--color-bg-generator-page)}
+.payment-page{gap:0;padding:0}
+.payment-header{width:100%;padding:24px 32px;background:#fff}
+.payment-content{width:min(1182px,calc(100% - 64px));margin:32px auto;padding-bottom:32px}
+.payment-content h1{font-size:48px;line-height:64.8px;font-weight:900}
+.payment-columns{display:grid;grid-template-columns:453px minmax(0,1fr);gap:24px;margin-top:32px}
+.payment-card,.payment-summary__features,.payment-summary__total{border:2px solid var(--color-border-generator);border-radius:16px;background:#fff}
+.payment-card{display:flex;flex-direction:column;align-items:stretch;gap:16px;padding:40px 40px 24px}
+.payment-card h2,.payment-summary h2,.payment-summary__total{font-size:24px;font-weight:700;line-height:33px}
+.payment-card__amount{font-size:24px;line-height:33px;margin-top:-4px}
+.payment-card__amount span,.payment-summary__total small{font-size:15.5px;line-height:1;font-weight:700}
+.payment-card__tax{margin-top:-16px;font-size:14px;line-height:22.4px;color:var(--color-text-muted)}
+.payment-card h3{font-size:16px;font-weight:700;line-height:22px}
+.payment-methods{display:flex;flex-direction:column;gap:16px}
+.payment-methods .payment-method{width:100%;min-height:50px;height:50px;padding:8px 16px;border:1px solid var(--color-border-generator);border-radius:8px;background:#20201e;color:#fff;font-size:20px;font-weight:400;line-height:32px}
+.payment-methods .payment-method:hover{background:#393936}
+.payment-method img{display:block;width:24px;height:24px;object-fit:contain}
+.payment-card__legal{border-top:1px solid var(--color-border-generator);padding-top:16px;color:rgb(119 119 119 / .8);text-align:center;font-size:14px;line-height:22.4px}
+.payment-card__legal a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.payment-summary{display:flex;flex-direction:column;gap:24px;min-width:0}
+.payment-summary__features{flex:1;min-height:486px;padding:40px}
+.payment-summary__features ul{display:flex;flex-direction:column;gap:8px;list-style:none;margin:16px 0 0;padding:0}
+.payment-summary__features li{display:flex;align-items:center;gap:12px;min-height:24px;font-size:16px;line-height:24px;color:#000}
+.payment-summary__features img{display:block;width:24px;height:24px;flex:none}
+.payment-summary__highlight{font-weight:700}
+.payment-summary__total{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:116px;padding:24px 40px;background:#f8f5ff}
+.payment-actions{display:flex;justify-content:flex-end;gap:24px}
+.payment-actions .button{height:52px;min-height:52px;border-radius:12px}
+.payment-actions .button--generate{font-size:16px}
+@media(max-width:900px){.payment-columns{grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr)}.payment-card,.payment-summary__features{padding-inline:24px}.payment-summary__total{padding-inline:24px}}
+@media(max-width:700px){.payment-content{width:min(500px,calc(100% - 32px));margin-top:24px}.payment-content h1{font-size:36px;line-height:1.25}.payment-columns{grid-template-columns:1fr;gap:24px;margin-top:24px}.payment-summary__features{min-height:0}.payment-card{padding:32px 24px 24px}.payment-actions{justify-content:stretch;gap:12px}.payment-actions .button{flex:1;min-width:0;padding-inline:10px;white-space:normal}.payment-summary__total{min-height:90px}}
+@media(max-width:420px){.payment-content h1{font-size:30px}.payment-actions .button{font-size:14px}}

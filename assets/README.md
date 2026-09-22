@@ -10,6 +10,8 @@ Original artwork exported from FORMA (`7PuiN52bUs4UnIIlfcx6RD`). SVG content and
 | icons/chevron-down.svg | Frame 43:154 export 34bb0.svg; Tools dropdown |
 | icons/chevron-down-light.svg | Frame 43:154 export e3dd5.svg; language dropdown |
 | brand/logo-light.svg | Frame 43:154 export dfb60.svg; footer logo |
+| icons/google-pay-g.png | Frame 137:813 export 4ca32.png; Google Pay mark |
+| icons/apple-pay.svg | Frame 137:813 export 979c8.svg; Apple Pay mark |
 
 Earlier header, music illustration and tool-card exports remain at the assets root; their mappings are in `docs/design-system.md`. No runtime dependency on temporary Figma URLs is required.
 
