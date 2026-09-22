@@ -37,7 +37,6 @@ export function PlanCard(plan, selected = false) {
     const available = index < plan.available;
     const item = document.createElement('li');
     item.className = available ? '' : 'is-unavailable';
-    if (plan.id === 'annual' && index >= 5) item.classList.add('is-muted');
     const icon = document.createElement('img');
     icon.src = `./assets/icons/plan-${available ? 'check' : 'unavailable'}.svg`;
     icon.alt = '';
