@@ -1,5 +1,5 @@
 import { songs } from '../data/songs.js';
-import { SongLibraryRow } from '../components/SongLibraryRow.js?v=songs-2';
+import { SongLibraryRow } from '../components/SongLibraryRow.js?v=song-menu-1';
 
 /** My Songs file view from FORMA 128:551. */
 export function SongsPage(actions) {
@@ -31,6 +31,7 @@ export function SongsPage(actions) {
       onPreview: actions.onPreview,
       onLocked: () => { window.location.href = './plans.html'; },
       onUnavailable: title => actions.onPreview(`${title} download`),
+      onCertificate: () => actions.onPreview('Download PDF certificate'),
       pauseOthers: active => rows.forEach(candidate => { if (candidate.audio && candidate.audio !== active) candidate.audio.pause(); }),
     });
     rows.push(row);
