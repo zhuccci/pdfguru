@@ -30,13 +30,13 @@ body[data-page="songs"]{background:#f7f5fb}
 .song-library-row__names strong{font-weight:700}
 .song-library-row__names span{color:#777;font-weight:700}
 .song-library-row__title-editor{width:100%;min-width:0;height:28px;padding:2px 6px;border:1px solid #7422e0;border-radius:6px;color:#20201e;font-size:16px;font-weight:700;line-height:22px}
-.song-library-row__access{display:flex;align-items:flex-start;gap:4px;color:#c74d10;white-space:nowrap}
+.song-library-row__access{display:flex;align-items:flex-start;gap:4px;padding-right:12px;color:#c74d10;white-space:nowrap}
 .song-library-row[data-access="full"] .song-library-row__access{color:#00a318}
 .song-library-row__access img{width:24px;height:24px}
 .song-library-row__access-copy{display:flex;flex-direction:column;gap:4px;line-height:22px}
 .song-library-row__access-copy strong{font-weight:700}
 .song-library-row__access-copy>span{color:#777;font-weight:400}
-.song-library-row[data-access="full"] .song-library-row__access-copy>span{color:#00a318}
+.song-library-row[data-access="full"] .song-library-row__access-copy>span{color:#777}
 .song-library-row__actions{position:relative;display:flex;justify-content:flex-end;gap:16px}
 .song-library-row__icon-button{display:grid;place-items:center;flex:none;width:56px;height:56px;padding:0;border-radius:16px}
 .song-library-row__icon-button img{display:block;width:24px;height:24px}

@@ -60,7 +60,6 @@ export function SongLibraryRow(song, { onPreview, onLocked, onUnavailable, onCer
   const access = document.createElement('div');
   access.className = 'song-library-row__access';
   access.setAttribute('role', 'cell');
-  if (song.access === 'full') access.append(icon('check'));
   const accessCopy = document.createElement('span');
   accessCopy.className = 'song-library-row__access-copy';
   const accessTitle = document.createElement('strong');

@@ -1,5 +1,5 @@
 import { songs } from '../data/songs.js?v=duration-1';
-import { SongLibraryRow } from '../components/SongLibraryRow.js?v=access-detail-1';
+import { SongLibraryRow } from '../components/SongLibraryRow.js?v=access-spacing-1';
 
 /** My Songs file view from FORMA 128:551. */
 export function SongsPage(actions) {
