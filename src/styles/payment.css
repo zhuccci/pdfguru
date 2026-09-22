@@ -23,7 +23,6 @@ body[data-page="payment"]{background:var(--color-bg-generator-page)}
 .payment-summary__features ul{display:flex;flex-direction:column;gap:8px;list-style:none;margin:16px 0 0;padding:0}
 .payment-summary__features li{display:flex;align-items:center;gap:12px;min-height:24px;font-size:16px;line-height:24px;color:#000}
 .payment-summary__features img{display:block;width:24px;height:24px;flex:none}
-.payment-summary__highlight{font-weight:700}
 .payment-summary__total{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:116px;padding:24px 40px;background:#f8f5ff}
 .payment-actions{display:flex;justify-content:flex-end;gap:24px}
 .payment-actions .button{height:52px;min-height:52px;border-radius:12px}

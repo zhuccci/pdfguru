@@ -80,7 +80,6 @@ export function PaymentPage(actions) {
     icon.alt = '';
     const text = document.createElement('span');
     text.textContent = label;
-    if (label === 'Commercial music license') text.className = 'payment-summary__highlight';
     item.append(icon, text);
     list.append(item);
   }
