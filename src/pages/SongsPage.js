@@ -11,7 +11,7 @@ export function SongsPage(actions) {
   sidebar.className = 'songs-sidebar';
   sidebar.innerHTML = '<a class="songs-sidebar__brand" href="./index.html" aria-label="PDF Guru home"><span class="brand-mask"><img src="./assets/3c567.svg" alt="PDF Guru"></span></a><nav class="songs-sidebar__nav" aria-label="File navigation"></nav>';
   const nav = sidebar.querySelector('nav');
-  for (const [label, iconName, current] of [['My songs', 'nav-audio', true], ['All files', 'file', false], ['Tools', 'file', false]]) {
+  for (const [label, iconName, current] of [['My songs', 'nav-audio', true], ['All files', 'file', false], ['Tools', 'tools', false]]) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = `songs-sidebar__tab${current ? ' is-current' : ''}`;
