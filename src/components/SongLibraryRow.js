@@ -57,11 +57,18 @@ export function SongLibraryRow(song, { onPreview, onLocked, onUnavailable, onCer
   updated.className = 'song-library-row__updated';
   updated.setAttribute('role', 'cell');
   updated.textContent = song.updated;
-  const access = document.createElement('span');
+  const access = document.createElement('div');
   access.className = 'song-library-row__access';
   access.setAttribute('role', 'cell');
   if (song.access === 'full') access.append(icon('check'));
-  access.append(document.createTextNode(song.access === 'full' ? 'Full song' : 'Preview'));
+  const accessCopy = document.createElement('span');
+  accessCopy.className = 'song-library-row__access-copy';
+  const accessTitle = document.createElement('strong');
+  accessTitle.textContent = song.access === 'full' ? 'Full song' : 'Preview';
+  const accessDetail = document.createElement('span');
+  accessDetail.textContent = song.access === 'full' ? 'Commercial license' : 'Unlicensed';
+  accessCopy.append(accessTitle, accessDetail);
+  access.append(accessCopy);
 
   const actions = document.createElement('div');
   actions.className = 'song-library-row__actions';
