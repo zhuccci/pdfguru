@@ -1,0 +1,18 @@
+/* FORMA 137:1086: prototype payment confirmation. */
+body[data-page="payment-success"]{background:var(--color-bg-generator-page)}
+.payment-success-page{gap:0;padding:0}
+.payment-success-header{width:100%;padding:24px 32px;background:#fff}
+.payment-success-content{display:grid;place-items:center;flex:1;min-height:calc(100dvh - 98px);padding:32px 16px}
+.payment-success-card{display:flex;flex-direction:column;align-items:center;gap:16px;width:min(564px,100%);padding:24px;border-radius:16px;background:#fff;box-shadow:0 0 6px rgb(116 34 224 / .15);text-align:center}
+.payment-success-artwork{display:block;width:226px;height:170px;object-fit:contain}
+.payment-success-card h1{font-size:24px;font-weight:700;line-height:32px}
+.payment-success-message{font-size:20px;line-height:32px}
+.payment-success-retry{display:inline;padding:0;color:#7422e0;font-size:inherit;line-height:inherit}
+.payment-success-retry:hover{text-decoration:underline}
+.payment-success-actions{display:flex;justify-content:space-between;gap:24px;width:100%;margin-top:24px}
+.payment-success-actions .button{height:52px;min-height:52px;border-radius:12px}
+.payment-success-actions .button--secondary{flex:1}
+.payment-success-actions .button--generate{flex:none;font-size:16px}
+.payment-success-actions img{display:block;flex:none}
+@media(max-width:620px){.payment-success-header{padding:16px}.payment-success-content{min-height:calc(100dvh - 90px)}.payment-success-card{padding:20px}.payment-success-message{font-size:17px;line-height:28px}.payment-success-actions{gap:12px}.payment-success-actions .button{font-size:14px;padding-inline:10px;white-space:normal}}
+@media(max-width:400px){.payment-success-actions{flex-direction:column}.payment-success-actions .button{width:100%}}
