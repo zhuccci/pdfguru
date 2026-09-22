@@ -1,6 +1,6 @@
 import { Header } from '../components/Header.js?v=my-files-1';
 import { Button } from '../components/Button.js';
-import { planFeatures, plans } from '../data/plans.js?v=license-1';
+import { planFeatures, plans } from '../data/plans.js?v=music-license-1';
 
 /** FORMA 137:813. The checkout controls are visual prototype actions. */
 export function PaymentPage(actions) {
@@ -80,7 +80,7 @@ export function PaymentPage(actions) {
     icon.alt = '';
     const text = document.createElement('span');
     text.textContent = label;
-    if (label === 'Commercial song license document') text.className = 'payment-summary__highlight';
+    if (label === 'Commercial music license') text.className = 'payment-summary__highlight';
     item.append(icon, text);
     list.append(item);
   }

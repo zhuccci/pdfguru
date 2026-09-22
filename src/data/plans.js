@@ -2,7 +2,7 @@
 export const planFeatures = [
   'Unlimited edits',
   'Unlimited downloads',
-  'Commercial song license document',
+  'Commercial music license',
   'Multi-format conversion',
   'Edit text and images in PDF files',
   'Organize and reorder PDF pages',
