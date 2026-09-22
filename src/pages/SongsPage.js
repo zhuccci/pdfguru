@@ -1,5 +1,5 @@
-import { songs } from '../data/songs.js';
-import { SongLibraryRow } from '../components/SongLibraryRow.js?v=song-menu-1';
+import { songs } from '../data/songs.js?v=duration-1';
+import { SongLibraryRow } from '../components/SongLibraryRow.js?v=duration-1';
 
 /** My Songs file view from FORMA 128:551. */
 export function SongsPage(actions) {
@@ -24,7 +24,7 @@ export function SongsPage(actions) {
   const panel = document.createElement('section');
   panel.className = 'songs-panel';
   panel.setAttribute('aria-labelledby', 'songs-title');
-  panel.innerHTML = '<h1 id="songs-title">My Songs</h1><div class="songs-table" role="table" aria-label="My songs"><div class="songs-table__head" role="row"><span role="columnheader">Name</span><span role="columnheader">Size</span><span role="columnheader">Updated</span><span role="columnheader">Access</span><span class="sr-only" role="columnheader">Actions</span></div><div class="songs-table__body" role="rowgroup"></div></div>';
+  panel.innerHTML = '<h1 id="songs-title">My Songs</h1><div class="songs-table" role="table" aria-label="My songs"><div class="songs-table__head" role="row"><span role="columnheader">Name</span><span role="columnheader">Size</span><span role="columnheader">Updated</span><span role="columnheader">Duration</span><span role="columnheader">Access</span><span class="sr-only" role="columnheader">Actions</span></div><div class="songs-table__body" role="rowgroup"></div></div>';
   const rows = [];
   for (const song of songs) {
     const row = SongLibraryRow(song, {

@@ -49,6 +49,10 @@ export function SongLibraryRow(song, { onPreview, onLocked, onUnavailable, onCer
   size.className = 'song-library-row__size';
   size.setAttribute('role', 'cell');
   size.textContent = song.size;
+  const duration = document.createElement('span');
+  duration.className = 'song-library-row__duration';
+  duration.setAttribute('role', 'cell');
+  duration.textContent = song.duration;
   const updated = document.createElement('span');
   updated.className = 'song-library-row__updated';
   updated.setAttribute('role', 'cell');
@@ -154,7 +158,7 @@ export function SongLibraryRow(song, { onPreview, onLocked, onUnavailable, onCer
     art.addEventListener('click', () => audio.paused ? (audio.currentTime >= 10 && (audio.currentTime = 0), audio.play().catch(() => onPreview(currentName))) : audio.pause());
   } else art.addEventListener('click', () => onUnavailable(currentName));
 
-  row.append(file, size, updated, access, actions);
+  row.append(file, size, updated, duration, access, actions);
   if (audio) row.append(audio);
   return { element: row, audio };
 }

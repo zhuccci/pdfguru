@@ -2,7 +2,7 @@ import { HomePage } from './pages/HomePage.js?v=my-files-1';
 import { MusicPage } from './pages/MusicPage.js?v=my-files-1';
 import { TrackResultsPage } from './pages/TrackResultsPage.js?v=my-files-1';
 import { PlansPage } from './pages/PlansPage.js?v=payment-1';
-import { SongsPage } from './pages/SongsPage.js?v=song-menu-1';
+import { SongsPage } from './pages/SongsPage.js?v=duration-1';
 import { PaymentPage } from './pages/PaymentPage.js?v=success-1';
 import { PaymentSuccessPage } from './pages/PaymentSuccessPage.js?v=certificate-1';
 import { Footer } from './components/Footer.js';
