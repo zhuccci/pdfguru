@@ -46,7 +46,7 @@ export function PlansPage(actions) {
   const controls = document.createElement('div');
   controls.className = 'plans-actions';
   controls.append(
-    Button({ label: 'Back to files', variant: 'secondary', onClick: actions.onBackToResults }),
+    Button({ label: 'Back to files', variant: 'secondary', onClick: actions.onBackToFiles }),
     Button({ label: 'Continue', variant: 'generate', onClick: () => actions.onContinuePlan(plans.find(plan => plan.id === grid.querySelector('input:checked')?.value)) }),
   );
   content.append(title, grid, controls, legal);
