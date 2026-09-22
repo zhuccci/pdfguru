@@ -1,6 +1,6 @@
 import { Header } from '../components/Header.js?v=my-files-1';
 import { Button } from '../components/Button.js';
-import { planFeatures, plans } from '../data/plans.js?v=music-license-1';
+import { planFeatures, plans } from '../data/plans.js?v=full-access-1';
 
 /** FORMA 137:813. The checkout controls are visual prototype actions. */
 export function PaymentPage(actions) {

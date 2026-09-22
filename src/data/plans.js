@@ -12,6 +12,6 @@ export const planFeatures = [
 
 export const plans = [
   { id: 'limited', title: '7-Day Limited Access', whole: '$0.', fraction: '99', available: 5, postTrialMonthly: '$49.99' },
-  { id: 'full', title: '7-Day Full Access', whole: '$1.', fraction: '99', available: 5, popular: true, postTrialMonthly: '$49.99' },
+  { id: 'full', title: '7-Day Full Access', whole: '$1.', fraction: '99', available: 8, popular: true, postTrialMonthly: '$49.99' },
   { id: 'annual', title: 'Annual Plan', whole: '$24.', fraction: '95', period: '/per month', available: 8 },
 ];

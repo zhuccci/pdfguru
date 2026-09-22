@@ -1,4 +1,4 @@
-import { planFeatures } from '../data/plans.js?v=music-license-1';
+import { planFeatures } from '../data/plans.js?v=full-access-1';
 
 /** A native radio option styled as the Figma 130:1659 pricing card. */
 export function PlanCard(plan, selected = false) {

@@ -1,7 +1,7 @@
 import { Header } from '../components/Header.js?v=my-files-1';
 import { Button } from '../components/Button.js';
-import { PlanCard } from '../components/PlanCard.js?v=regular-license-1';
-import { plans } from '../data/plans.js?v=music-license-1';
+import { PlanCard } from '../components/PlanCard.js?v=full-access-1';
+import { plans } from '../data/plans.js?v=full-access-1';
 
 /** Pricing selection screen from FORMA 130:1659; checkout remains a prototype. */
 export function PlansPage(actions) {
