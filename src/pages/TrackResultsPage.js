@@ -1,4 +1,4 @@
-import { Header } from '../components/Header.js?v=signed-in-1';
+import { Header } from '../components/Header.js?v=my-files-1';
 import { TrackGeneration } from '../components/TrackGeneration.js?v=plans-1';
 
 /** Figma page 105:330. Shares the site's header and footer via app.js. */

@@ -1,4 +1,4 @@
-import { Header } from '../components/Header.js?v=signed-in-1';
+import { Header } from '../components/Header.js?v=my-files-1';
 import { Features } from '../components/Features.js';
 import { UploadZone } from '../components/UploadZone.js';
 

@@ -1,4 +1,4 @@
-import { Header } from '../components/Header.js?v=signed-in-1';
+import { Header } from '../components/Header.js?v=my-files-1';
 import { Button } from '../components/Button.js';
 import { PlanCard } from '../components/PlanCard.js?v=plans-2';
 import { plans } from '../data/plans.js?v=plan-terms-2';

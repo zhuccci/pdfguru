@@ -11,6 +11,8 @@
 .nav-link{display:inline-flex;align-items:center;gap:8px;font-size:18px;font-weight:700;min-height:44px;line-height:25px;padding:0;border-radius:8px;white-space:nowrap}
 .nav-link .icon:last-child{margin-left:-4px}
 .header-login{height:44px;min-height:44px;border-radius:14px;border-color:var(--color-border-muted)}
+.header-actions{display:flex;align-items:center;justify-content:flex-end;gap:16px}
+.header-my-files{height:44px;min-height:44px;border-radius:14px;border-color:var(--color-border-muted)}
 .tools-menu{position:absolute;top:56px;left:176px;z-index:5;min-width:220px;max-height:400px;overflow:auto;padding:8px;background:var(--color-bg-page);border:1px solid var(--color-border-default);border-radius:14px;box-shadow:0 8px 24px rgb(0 0 0 / .12)}
 .features{padding:32px 0;display:flex;flex-direction:column;align-items:center;gap:48px}
 .features h2{width:var(--module-width);max-width:1040px;text-align:center}
@@ -26,4 +28,4 @@
 .site-footer small{display:block;text-align:center;color:var(--color-text-copyright);font-size:14px;line-height:19px}
 @media(max-width:1000px){.footer-row{flex-direction:column}.footer-grid{max-width:none;width:100%}.footer-brand{flex-basis:auto}}
 @media(max-width:800px){.features{gap:32px}.tool-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.brand{width:130px}.nav-start{gap:12px}.nav-items{gap:16px}.nav-link{font-size:16px}.site-footer{margin-top:60px;padding:40px 24px}.footer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.tools-menu{left:0}}
-@media(max-width:600px){.site-header{align-items:flex-start;gap:12px}.nav-start{flex-wrap:wrap;gap:16px}.brand{width:100%}.nav-items{gap:20px}.header-login{padding:8px 16px;font-size:16px}.tools-menu{top:100px}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-row{padding:16px 0}.footer-grid>div:nth-child(3){grid-column:1}.site-footer small{margin-top:16px}}
+@media(max-width:600px){.site-header{align-items:flex-start;gap:12px}.nav-start{flex-wrap:wrap;gap:16px}.brand{width:100%}.nav-items{gap:20px}.header-actions{flex-wrap:wrap;gap:8px}.header-login,.header-my-files{padding:8px 12px;font-size:14px}.tools-menu{top:100px}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-row{padding:16px 0}.footer-grid>div:nth-child(3){grid-column:1}.site-footer small{margin-top:16px}}

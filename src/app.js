@@ -1,7 +1,7 @@
-import { HomePage } from './pages/HomePage.js?v=signed-in-1';
-import { MusicPage } from './pages/MusicPage.js?v=signed-in-1';
-import { TrackResultsPage } from './pages/TrackResultsPage.js?v=plans-1';
-import { PlansPage } from './pages/PlansPage.js?v=songs-1';
+import { HomePage } from './pages/HomePage.js?v=my-files-1';
+import { MusicPage } from './pages/MusicPage.js?v=my-files-1';
+import { TrackResultsPage } from './pages/TrackResultsPage.js?v=my-files-1';
+import { PlansPage } from './pages/PlansPage.js?v=my-files-1';
 import { SongsPage } from './pages/SongsPage.js?v=songs-2';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
@@ -28,6 +28,7 @@ const actions = {
   onDownload: () => { window.location.href = './plans.html'; },
   onBackToResults: () => { window.location.href = './results.html?ready=1'; },
   onBackToFiles: () => { window.location.href = './songs.html'; },
+  onMyFiles: () => { window.location.href = './songs.html'; },
   onContinuePlan: plan => dialog.show('Continue', `Checkout for ${plan.title} is not connected in this prototype.`),
   onCreateAnotherTrack: () => { window.location.href = './music.html'; },
 };

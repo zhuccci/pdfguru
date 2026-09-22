@@ -2,8 +2,8 @@ import { Button } from './Button.js';
 import { Icon } from './Icon.js';
 import { tools } from '../data/tools.js';
 
-/** Shared by home and music. Figma header 43:160. */
-export function Header({ onPreview, onLogin, onLogout, isSignedIn = false }) {
+/** Shared header; signed-in actions follow FORMA 137:583. */
+export function Header({ onPreview, onLogin, onLogout, onMyFiles, isSignedIn = false }) {
   const header = document.createElement('header');
   header.className = 'site-header';
   header.innerHTML = `<nav class="nav-start" aria-label="Main navigation">
@@ -24,9 +24,14 @@ export function Header({ onPreview, onLogin, onLogout, isSignedIn = false }) {
   header.addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) { closeMenu(); toggle.focus(); } });
   header.querySelector('.nav-items').append(toggle, Button({ label: 'Contact Us', variant: 'nav', className: 'nav-link', onClick: () => { closeMenu(); onPreview('Contact Us'); } }));
   let signedIn = isSignedIn;
+  const accountActions = document.createElement('div');
+  accountActions.className = 'header-actions';
+  const myFilesButton = Button({ label: 'My files', variant: 'secondary', className: 'header-my-files', onClick: () => { closeMenu(); onMyFiles(); } });
+  myFilesButton.hidden = !signedIn;
   const accountButton = Button({ label: signedIn ? 'Log out' : 'Log in', variant: 'secondary', className: 'header-login', onClick: () => { closeMenu(); signedIn ? onLogout() : onLogin(); } });
-  window.addEventListener('pdfguru:mock-login', () => { signedIn = true; accountButton.textContent = 'Log out'; });
-  window.addEventListener('pdfguru:mock-logout', () => { signedIn = false; accountButton.textContent = 'Log in'; });
-  header.append(accountButton);
+  window.addEventListener('pdfguru:mock-login', () => { signedIn = true; myFilesButton.hidden = false; accountButton.textContent = 'Log out'; });
+  window.addEventListener('pdfguru:mock-logout', () => { signedIn = false; myFilesButton.hidden = true; accountButton.textContent = 'Log in'; });
+  accountActions.append(myFilesButton, accountButton);
+  header.append(accountActions);
   return header;
 }
