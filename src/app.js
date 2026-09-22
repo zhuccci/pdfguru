@@ -2,7 +2,7 @@ import { HomePage } from './pages/HomePage.js?v=signed-in-1';
 import { MusicPage } from './pages/MusicPage.js?v=signed-in-1';
 import { TrackResultsPage } from './pages/TrackResultsPage.js?v=plans-1';
 import { PlansPage } from './pages/PlansPage.js?v=songs-1';
-import { SongsPage } from './pages/SongsPage.js?v=songs-1';
+import { SongsPage } from './pages/SongsPage.js?v=songs-2';
 import { Footer } from './components/Footer.js';
 import { Dialog } from './components/Dialog.js';
 import { UnlockDialog } from './components/UnlockDialog.js?v=signed-in-1';

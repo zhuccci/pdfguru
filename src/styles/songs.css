@@ -20,6 +20,11 @@ body[data-page="songs"]{background:#f7f5fb}
 .song-library-row__art{display:grid;place-items:center;flex:none;width:80px;height:80px;padding:0;background:#598ceb;border-radius:16px}
 .song-library-row__art:hover{background:#477de0}
 .song-library-row__art img{display:block;width:24px;height:24px}
+.song-library-row__art .song-library-row__art-play,.song-library-row__art-pause{display:none}
+.song-library-row:hover .song-library-row__art-audio,.song-library-row__art:focus-visible .song-library-row__art-audio,.song-library-row__art.is-playing .song-library-row__art-audio{display:none}
+.song-library-row:hover .song-library-row__art-play,.song-library-row__art:focus-visible .song-library-row__art-play{display:block}
+.song-library-row__art.is-playing .song-library-row__art-play{display:none}
+.song-library-row__art.is-playing .song-library-row__art-pause{display:block;width:16px;height:20px;border-left:5px solid #fff;border-right:5px solid #fff}
 .song-library-row__names{display:flex;flex-direction:column;gap:4px;min-width:0;line-height:22px}
 .song-library-row__names strong,.song-library-row__names span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .song-library-row__names strong{font-weight:700}
