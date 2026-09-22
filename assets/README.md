@@ -13,6 +13,8 @@ Original artwork exported from FORMA (`7PuiN52bUs4UnIIlfcx6RD`). SVG content and
 | icons/google-pay-g.png | Frame 137:813 export 4ca32.png; Google Pay mark |
 | icons/apple-pay.svg | Frame 137:813 export 979c8.svg; Apple Pay mark |
 | payment-success-illustration.png | Frame 137:1086 image 14; cropped and optimized for the 226 × 170px illustration slot |
+| b3d2b.svg | Frame 24:407 AI Music Generator 64px icon |
+| icons/new-label.svg | Frame 24:407 exact NEW badge artwork |
 
 Earlier header, music illustration and tool-card exports remain at the assets root; their mappings are in `docs/design-system.md`. No runtime dependency on temporary Figma URLs is required.
 

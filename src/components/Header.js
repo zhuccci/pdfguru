@@ -1,6 +1,6 @@
 import { Button } from './Button.js';
 import { Icon } from './Icon.js';
-import { tools } from '../data/tools.js';
+import { tools } from '../data/tools.js?v=music-module-1';
 
 /** Shared header; signed-in actions follow FORMA 137:583. */
 export function Header({ onPreview, onLogin, onLogout, onMyFiles, isSignedIn = false }) {
@@ -17,7 +17,7 @@ export function Header({ onPreview, onLogin, onLogout, onMyFiles, isSignedIn = f
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-controls', 'tools-menu');
   function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
-  for (const tool of tools) menu.append(Button({ label: tool.label, variant: 'text', onClick: () => { closeMenu(); onPreview(tool.label); } }));
+  for (const tool of tools) menu.append(Button({ label: tool.label, variant: 'text', onClick: () => { closeMenu(); tool.href ? (window.location.href = tool.href) : onPreview(tool.label); } }));
   toggle.addEventListener('click', () => { menu.hidden = !menu.hidden; toggle.setAttribute('aria-expanded', String(!menu.hidden)); });
   document.addEventListener('click', event => { if (!header.contains(event.target)) closeMenu(); });
   header.addEventListener('focusout', event => { if (!header.contains(event.relatedTarget)) closeMenu(); });

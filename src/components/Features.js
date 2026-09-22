@@ -1,5 +1,5 @@
-import { ToolCard } from './ToolCard.js';
-import { tools } from '../data/tools.js';
+import { ToolCard } from './ToolCard.js?v=music-module-1';
+import { tools } from '../data/tools.js?v=music-module-1';
 
 export function Features({ onPreview }) {
   const section = document.createElement('section');

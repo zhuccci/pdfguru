@@ -8,9 +8,11 @@
 .button--text:hover{background:var(--color-bg-card)}
 .button--footer{display:block;text-align:left;color:var(--color-text-footer);font-weight:400;min-height:36px;padding:7px 0;line-height:22px}
 .button--footer:hover{text-decoration:underline}
-.tool-card{height:130px;width:195px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-14);padding:var(--space-1) var(--space-6);background:var(--color-bg-card);border:1px solid transparent;border-radius:var(--radius-card);font-weight:700;line-height:22px;transition:background-color .3s ease-out,border-color .3s ease-out}
+.tool-card{position:relative;height:130px;width:195px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-14);padding:var(--space-1) var(--space-6);background:var(--color-bg-card);border:1px solid transparent;border-radius:var(--radius-card);color:inherit;font-weight:700;line-height:22px;text-decoration:none;transition:background-color .3s ease-out,border-color .3s ease-out}
 .tool-card:hover{background:transparent;border-color:var(--color-bg-card)}
 .tool-card img{display:block;flex-shrink:0}
+.tool-card__badge{position:absolute;top:7px;left:50%;display:flex;align-items:center;justify-content:center;width:38px;height:16px;padding:4px 8px;transform:translateX(-50%);border-radius:4px;background:#d3234a}
+.tool-card__badge img{display:block;width:26px;height:8px}
 .upload-zone{width:min(678px,100%);margin:auto}
 .upload-border{border:.667px dashed var(--color-border-upload);border-radius:40px;padding:var(--space-16);height:350px}
 .upload-drop{position:relative;background:var(--color-button-primary-default);color:var(--color-text-inverse);width:100%;height:316px;border-radius:32px;transition:background-color .3s ease-out}

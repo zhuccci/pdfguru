@@ -1,11 +1,12 @@
-// Exact icon assignments from the ten edited Figma instances.
+// Exact order and icon assignments from the ten edited Figma instances (24:407).
 export const tools = [
   ['PDF to Word', 'd945b.svg'], ['PDF to JPG', 'f991d.svg'],
   ['PDF to PNG', '9b8a4.svg'], ['PDF to Excel', '50bee.svg'],
   ['PDF to PPTX', 'f991d.svg'], ['PDF to HTML', '42bac.svg'],
-  ['Word to PDF', 'd945b.svg'], ['JPG to PDF', 'f991d.svg'],
-  ['PNG to PDF', '9b8a4.svg'], ['Excel to PDF', 'f991d.svg'],
+  ['Word to PDF', 'd945b.svg'], ['PNG to PDF', '9b8a4.svg'],
+  ['Excel to PDF', 'f991d.svg'],
 ].map(([label, icon]) => ({ label, icon }));
+tools.push({ label: 'AI Music Generator', icon: 'b3d2b.svg', badge: 'NEW', href: './music.html' });
 export const footerGroups = {
   Tools: ['Edit & Sign', 'Convert', 'Forms'],
   Company: ['About Us', 'Contact Us', 'Blog', 'FAQ'],

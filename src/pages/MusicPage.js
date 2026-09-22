@@ -1,5 +1,5 @@
-import { Header } from '../components/Header.js?v=my-files-1';
-import { Features } from '../components/Features.js';
+import { Header } from '../components/Header.js?v=music-module-1';
+import { Features } from '../components/Features.js?v=music-module-1';
 import { MusicGenerator } from '../components/MusicGenerator.js?v=lyrics-1';
 
 export function MusicPage(actions) {
